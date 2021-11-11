@@ -11,7 +11,7 @@ namespace DataLayer.Data
     public class FoodResQCtx : DbContext
     {
         public virtual DbSet<Customer> Customers { get; set; }
-        public virtual DbSet<Restaurant> Restaurant { get; set; }
+        public virtual DbSet<Restaurant> Restaurants { get; set; }
         public virtual DbSet<FoodBox> Foodboxes { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
