@@ -63,13 +63,13 @@ namespace DataLayer.Backend
 /*
 Ersätt "model.sql" och "admin.sql" med en klass "AdminBackend.cs" som har följande:
 
-En metod för att skapa om och seeda databasen
+*KLAR* En metod för att skapa om och seeda databasen
 
-En metod för att se alla användare
+TODO En metod för att se alla användare
 
-En metod för att kunna ta bort en användare utifrån användarnamn
+TODO En metod för att kunna ta bort en användare utifrån användarnamn
 
-En metod för att se alla restauranger
+TODO En metod för att se alla restauranger
 
-En metod för att kunna lägga till ett nytt restaurang objekt
+TODO En metod för att kunna lägga till ett nytt restaurang objekt
 */
