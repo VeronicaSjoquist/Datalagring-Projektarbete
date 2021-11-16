@@ -10,3 +10,11 @@ namespace DataLayer.Backend
     {
     }
 }
+
+/*
+Ersätt "restaurant.sql" med en klass "RestaurantBackend.cs" som har följande:
+
+En metod för att få en lista över alla sålda matlådor för ett restaurang objekt
+
+En metod för att lägga till ett nytt matlådeobjekt för en restaurang
+*/
