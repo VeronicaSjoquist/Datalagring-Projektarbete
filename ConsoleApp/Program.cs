@@ -10,6 +10,21 @@ namespace ConsoleApp
             var admin = new AdminBackend();
 
             admin.CreateAndSeedDb();
+
+            Console.WriteLine("Database created and seeded, press Enter to continue.");
+            Console.ReadLine();
+
+            var restaurant = new RestaurantBackend();
+
+            Console.WriteLine("Sold foodboxes for selected restaurant:");
+
+            foreach (var foodBox in restaurant.ShowSoldBoxes(1))
+            {
+                Console.WriteLine($"Food: {foodBox.Name}, Type: {foodBox.Type}, Price {foodBox.Price}");
+            }
+
+            Console.WriteLine("\nPress Enter to continue");
+            Console.ReadLine();
         }
     }
 }

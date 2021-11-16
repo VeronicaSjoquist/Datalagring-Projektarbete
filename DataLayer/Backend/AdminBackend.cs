@@ -10,6 +10,7 @@ namespace DataLayer.Backend
 {
     public class AdminBackend
     {
+        //*KLAR* En metod för att skapa om och seeda databasen
         public void CreateAndSeedDb()
         {
             using (var ctx = new FoodResQCtx())
@@ -60,16 +61,12 @@ namespace DataLayer.Backend
     }
 }
 
-/*
-Ersätt "model.sql" och "admin.sql" med en klass "AdminBackend.cs" som har följande:
+//Ersätt "model.sql" och "admin.sql" med en klass "AdminBackend.cs" som har följande:
 
-*KLAR* En metod för att skapa om och seeda databasen
+//TODO En metod för att se alla användare
 
-TODO En metod för att se alla användare
+//TODO En metod för att kunna ta bort en användare utifrån användarnamn
 
-TODO En metod för att kunna ta bort en användare utifrån användarnamn
+//TODO En metod för att se alla restauranger
 
-TODO En metod för att se alla restauranger
-
-TODO En metod för att kunna lägga till ett nytt restaurang objekt
-*/
+//TODO En metod för att kunna lägga till ett nytt restaurang objekt
