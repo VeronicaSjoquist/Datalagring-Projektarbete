@@ -11,12 +11,12 @@ namespace DataLayer.Backend
     public class RestaurantBackend
     {
         //En metod för att få en lista över alla sålda matlådor för ett restaurang objekt
-        public List<FoodBox> ShowSoldBoxes(int index)
+        public List<FoodBox> ShowSoldBoxes(int RestaurantId)
         {
             using (var ctx = new FoodResQCtx())
             {
                 var query = ctx.Foodboxes
-                    .Where(e => e.customer != null && e.restaurant.ID == index);
+                    .Where(e => e.customer != null && e.restaurant.ID == RestaurantId);
 
                 return query.ToList();
             }
@@ -27,17 +27,19 @@ namespace DataLayer.Backend
         {
             using (var ctx = new FoodResQCtx())
             {
-                var query = ctx.Restaurants
-                    .Where(e => e.ID == restaurantId);
+                var restaurant = ctx.Restaurants.Find(restaurantId);
 
-                var restaurant = query.FirstOrDefault();
+                if (restaurant == null)
+                {
+                    return;
+                }
 
                 var foodBox = new FoodBox()
                 {
                     Name = name, Type = type, Price = price, restaurant = restaurant
                 };
 
-                ctx.Add(foodBox);
+                ctx.Foodboxes.Add(foodBox);
                 ctx.SaveChanges();
             }
         }

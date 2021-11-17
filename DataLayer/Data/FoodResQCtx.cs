@@ -18,5 +18,11 @@ namespace DataLayer.Data
         {
             optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=FoodResQDb");
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Customer>()
+                .HasIndex(e => e.Name).IsUnique();
+        }
     }
 }

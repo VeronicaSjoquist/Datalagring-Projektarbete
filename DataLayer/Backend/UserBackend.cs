@@ -32,6 +32,11 @@ namespace DataLayer.Backend
 
                 var foodBox = ctx.Foodboxes.Find(foodboxId);
 
+                if (foodBox == null)
+                {
+                    return;
+                }
+
                 foodBox.customer = customer;
 
                 ctx.SaveChanges();

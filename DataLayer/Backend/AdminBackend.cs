@@ -16,7 +16,7 @@ namespace DataLayer.Backend
             using (var ctx = new FoodResQCtx())
             {
                 var query = ctx.Customers;
-                    
+
                 return query.ToList();
             }
         }
@@ -28,7 +28,12 @@ namespace DataLayer.Backend
             {
                 var query = ctx.Customers
                     .Where(e => e.Name == customerName);
-                var customer = query.First();
+                var customer = query.FirstOrDefault();
+
+                if (customer == null)
+                {
+                    return;
+                }
 
                 ctx.Remove(customer);
                 ctx.SaveChanges();
@@ -51,9 +56,9 @@ namespace DataLayer.Backend
         {
             using (var ctx = new FoodResQCtx())
             {
-                var restaurant = new Restaurant()
+                var restaurant = new Restaurant
                 {
-                    Name = name,
+                    Name = name
                 };
 
                 ctx.Add(restaurant);
