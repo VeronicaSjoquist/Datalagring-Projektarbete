@@ -78,17 +78,13 @@ namespace ConsoleApp
 
             Console.WriteLine("\nPress Enter to continue");
             Console.ReadLine();
+
+            admin.AddRestaurant("Jons Kebab");
+
+            Console.WriteLine("New restaurant har been added");
+
+            Console.WriteLine("\nPress Enter to exit");
+            Console.ReadLine();
         }
     }
 }
-
-/*
-Lägg även till ett körbart Console App projekt som går att steppa igenom
-där du testar att anropa alla hjälpmetoder i Backend projektet. 
-Börja med Admin metoden för att skapa om och seeda databasen.
-
-
-Console App projekt:
-- Använder alla metoder minst en gång.
-- Går att steppa igenom.
-*/

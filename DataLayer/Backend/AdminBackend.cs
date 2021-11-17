@@ -46,7 +46,20 @@ namespace DataLayer.Backend
             }
         }
 
-        //TODO En metod för att kunna lägga till ett nytt restaurang objekt
+        //En metod för att kunna lägga till ett nytt restaurang
+        public void AddRestaurant(string name)
+        {
+            using (var ctx = new FoodResQCtx())
+            {
+                var restaurant = new Restaurant()
+                {
+                    Name = name,
+                };
+
+                ctx.Add(restaurant);
+                ctx.SaveChanges();
+            }
+        }
 
         //En metod för att skapa om och seeda databasen
         public void CreateAndSeedDb()
@@ -98,6 +111,3 @@ namespace DataLayer.Backend
         }
     }
 }
-
-//Ersätt "model.sql" och "admin.sql" med en klass "AdminBackend.cs" som har följande:
-
