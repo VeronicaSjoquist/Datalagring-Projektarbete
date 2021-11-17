@@ -25,6 +25,13 @@ namespace ConsoleApp
 
             Console.WriteLine("\nPress Enter to continue");
             Console.ReadLine();
+
+            restaurant.AddFoodBox("Fooood", "Vegan", 49, 1);
+
+            Console.WriteLine("New foodbox added to selected restaurant");
+
+            Console.WriteLine("\nPress Enter to continue");
+            Console.ReadLine();
         }
     }
 }
