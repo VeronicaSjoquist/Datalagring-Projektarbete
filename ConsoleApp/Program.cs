@@ -51,6 +51,16 @@ namespace ConsoleApp
 
             Console.WriteLine("\nPress Enter to continue");
             Console.ReadLine();
+
+            Console.WriteLine("Customers:");
+
+            foreach (var customer in admin.ShowAllCustomers())
+            {
+                Console.WriteLine($"ID: {customer.ID} \tName: {customer.Name}");
+            }
+
+            Console.WriteLine("\nPress Enter to continue");
+            Console.ReadLine();
         }
     }
 }
