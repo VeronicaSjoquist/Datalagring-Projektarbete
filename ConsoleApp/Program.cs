@@ -32,6 +32,18 @@ namespace ConsoleApp
 
             Console.WriteLine("\nPress Enter to continue");
             Console.ReadLine();
+
+            var user = new UserBackend();
+
+            Console.WriteLine("Unsold foodboxes for selected type:");
+
+            foreach (var foodbox in user.UnsoldFoodBoxes("Fish"))
+            {
+                Console.WriteLine($"Food: {foodbox.Name}, Restaurant: {foodbox.restaurant.Name}, Price {foodbox.Price}");
+            }
+
+            Console.WriteLine("\nPress Enter to continue");
+            Console.ReadLine();
         }
     }
 }

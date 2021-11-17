@@ -23,12 +23,12 @@ namespace DataLayer.Backend
         }
         
         //En metod för att lägga till ett nytt matlådeobjekt för en restaurang
-
         public void AddFoodBox(string name, string type, decimal price, int restaurantId)
         {
             using (var ctx = new FoodResQCtx())
             {
-                var query = ctx.Restaurants.Where(e => e.ID == restaurantId);
+                var query = ctx.Restaurants
+                    .Where(e => e.ID == restaurantId);
 
                 var restaurant = query.FirstOrDefault();
 
@@ -43,6 +43,3 @@ namespace DataLayer.Backend
         }
     }
 }
-
-//Ersätt "restaurant.sql" med en klass "RestaurantBackend.cs" som har följande:
-
