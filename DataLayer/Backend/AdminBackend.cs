@@ -23,7 +23,16 @@ namespace DataLayer.Backend
 
         //TODO En metod för att kunna ta bort en användare utifrån användarnamn
 
-        //TODO En metod för att se alla restauranger
+        //En metod för att se alla restauranger
+        public List<Restaurant> ShowAllRestaurants()
+        {
+            using (var ctx = new FoodResQCtx())
+            {
+                var query = ctx.Restaurants;
+
+                return query.ToList();
+            }
+        }
 
         //TODO En metod för att kunna lägga till ett nytt restaurang objekt
 

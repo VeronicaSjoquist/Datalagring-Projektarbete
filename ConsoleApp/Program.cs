@@ -56,7 +56,17 @@ namespace ConsoleApp
 
             foreach (var customer in admin.ShowAllCustomers())
             {
-                Console.WriteLine($"ID: {customer.ID} \tName: {customer.Name}");
+                Console.WriteLine($"ID: {customer.ID}\tName: {customer.Name}");
+            }
+
+            Console.WriteLine("\nPress Enter to continue");
+            Console.ReadLine();
+
+            Console.WriteLine("Restaurants:");
+
+            foreach (var restaurants in admin.ShowAllRestaurants())
+            {
+                Console.WriteLine($"ID: {restaurants.ID}\tName: {restaurants.Name}");
             }
 
             Console.WriteLine("\nPress Enter to continue");
