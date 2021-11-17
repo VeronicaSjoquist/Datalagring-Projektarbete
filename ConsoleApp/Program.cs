@@ -44,6 +44,13 @@ namespace ConsoleApp
 
             Console.WriteLine("\nPress Enter to continue");
             Console.ReadLine();
+
+            user.BuyFoodBox(8,1);
+
+            Console.WriteLine("Selected foodbox has been punchased");
+
+            Console.WriteLine("\nPress Enter to continue");
+            Console.ReadLine();
         }
     }
 }

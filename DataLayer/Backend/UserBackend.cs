@@ -23,8 +23,19 @@ namespace DataLayer.Backend
             }
         }
 
-        //TODO En metod för att köpa ett givet lunchlåde objekt
+        //En metod för att köpa ett givet lunchlåde objekt
+        public void BuyFoodBox(int foodboxId, int customerId)
+        {
+            using (var ctx = new FoodResQCtx())
+            {
+                var customer = ctx.Customers.Find(customerId);
+
+                var foodBox = ctx.Foodboxes.Find(foodboxId);
+
+                foodBox.customer = customer;
+
+                ctx.SaveChanges();
+            }
+        }
     }
 }
-
-//Ersätt "user.sql" med en klass "UserBackend.cs" som har följande:
