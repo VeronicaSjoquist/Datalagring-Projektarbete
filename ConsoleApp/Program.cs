@@ -71,6 +71,13 @@ namespace ConsoleApp
 
             Console.WriteLine("\nPress Enter to continue");
             Console.ReadLine();
+            
+            admin.RemoveCustomer("Veronica");
+
+            Console.WriteLine("Selected customer has been removed");
+
+            Console.WriteLine("\nPress Enter to continue");
+            Console.ReadLine();
         }
     }
 }

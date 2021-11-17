@@ -21,7 +21,19 @@ namespace DataLayer.Backend
             }
         }
 
-        //TODO En metod för att kunna ta bort en användare utifrån användarnamn
+        //En metod för att kunna ta bort en användare utifrån användarnamn
+        public void RemoveCustomer(string customerName)
+        {
+            using (var ctx = new FoodResQCtx())
+            {
+                var query = ctx.Customers
+                    .Where(e => e.Name == customerName);
+                var customer = query.First();
+
+                ctx.Remove(customer);
+                ctx.SaveChanges();
+            }
+        }
 
         //En metod för att se alla restauranger
         public List<Restaurant> ShowAllRestaurants()
