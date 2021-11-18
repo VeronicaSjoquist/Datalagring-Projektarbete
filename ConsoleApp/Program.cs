@@ -72,7 +72,7 @@ namespace ConsoleApp
             Console.WriteLine("\nPress Enter to continue");
             Console.ReadLine();
             
-            admin.RemoveCustomer("Veronica");
+            admin.RemoveCustomer("Theo");
 
             Console.WriteLine("Selected customer has been removed");
 

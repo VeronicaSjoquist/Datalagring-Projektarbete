@@ -35,7 +35,7 @@ namespace DataLayer.Backend
                     return;
                 }
 
-                ctx.Remove(customer);
+                customer.Name = null;
                 ctx.SaveChanges();
             }
         }
@@ -97,9 +97,9 @@ namespace DataLayer.Backend
 
                 var foodboxes = new List<FoodBox>
                 {
-                    new FoodBox{customer = null, restaurant = restaurants[0], Name = "Grilled Rice", Type = "Fish", Price = 79},
-                    new FoodBox{customer = customers[1], restaurant = restaurants[0], Name = "Cooked Rice", Type = "Meat", Price = 69},
                     new FoodBox{customer = customers[0], restaurant = restaurants[0], Name = "Fried Rice", Type = "Vegan", Price = 59},
+                    new FoodBox{customer = customers[1], restaurant = restaurants[0], Name = "Cooked Rice", Type = "Meat", Price = 69},
+                    new FoodBox{customer = null, restaurant = restaurants[0], Name = "Grilled Rice", Type = "Fish", Price = 79},
 
                     new FoodBox{customer = customers[1], restaurant = restaurants[1], Name = "Kanelbulle", Type = "Vegan", Price = 59},
                     new FoodBox{customer = customers[0], restaurant = restaurants[1], Name = "Pizzarulle", Type = "Meat", Price = 69},

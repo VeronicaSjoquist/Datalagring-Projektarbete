@@ -10,7 +10,7 @@ namespace DataLayer.Model
     public class Customer
     {
         public int ID { get; set; }
-        [Required] [MaxLength(30)] public string Name { get; set; }
+        [MaxLength(30)] public string Name { get; set; }
 
         public virtual ICollection<FoodBox> FoodBoxes { get; set; }
     }
