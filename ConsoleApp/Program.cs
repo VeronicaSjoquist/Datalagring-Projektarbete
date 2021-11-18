@@ -8,13 +8,14 @@ namespace ConsoleApp
         static void Main(string[] args)
         {
             var admin = new AdminBackend();
+            var restaurant = new RestaurantBackend();
+            var user = new UserBackend();
+
 
             admin.CreateAndSeedDb();
 
             Console.WriteLine("Database created and seeded, press Enter to continue.");
             Console.ReadLine();
-
-            var restaurant = new RestaurantBackend();
 
             Console.WriteLine("Sold foodboxes for selected restaurant:");
 
@@ -32,8 +33,6 @@ namespace ConsoleApp
 
             Console.WriteLine("\nPress Enter to continue");
             Console.ReadLine();
-
-            var user = new UserBackend();
 
             Console.WriteLine("Unsold foodboxes for selected type:");
 
@@ -72,7 +71,7 @@ namespace ConsoleApp
             Console.WriteLine("\nPress Enter to continue");
             Console.ReadLine();
             
-            admin.RemoveCustomer("Theo");
+            admin.RemoveCustomer("Veronica");
 
             Console.WriteLine("Selected customer has been removed");
 
