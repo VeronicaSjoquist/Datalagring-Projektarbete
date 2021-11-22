@@ -3,6 +3,8 @@
 
 Grupp Anna-Märta, Veronica och Joakim
 
+![Bild](https://user-images.githubusercontent.com/89445183/142882928-a6c0f90d-4e0c-42ed-bd0d-9ae2ac56bed8.jpg)
+
 Arbetsplan: 
 
 - 22/11 Brainstorming, skapa projekt på Git, skapa Kamband, skapa tomma klasser och dela upp projektet. Bestämma vilket projekt under veckan. 
