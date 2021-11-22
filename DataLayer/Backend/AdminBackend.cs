@@ -22,12 +22,12 @@ namespace DataLayer.Backend
         }
 
         //En metod för att kunna ta bort en användare utifrån användarnamn
-        public void RemoveCustomer(string customerName)
+        public void RemoveCustomer(string username)
         {
             using (var ctx = new FoodResQCtx())
             {
                 var query = ctx.Customers
-                    .Where(e => e.Name == customerName);
+                    .Where(e => e.Username == username);
                 var customer = query.FirstOrDefault();
 
                 if (customer == null)
@@ -36,6 +36,9 @@ namespace DataLayer.Backend
                 }
 
                 customer.Name = null;
+                customer.Username = null;
+                customer.Password = null;
+
                 ctx.SaveChanges();
             }
         }
@@ -58,7 +61,9 @@ namespace DataLayer.Backend
             {
                 var restaurant = new Restaurant
                 {
-                    Name = name
+                    Name = name,
+                    Username = name + " username",
+                    Password = "password"
                 };
 
                 ctx.Add(restaurant);
