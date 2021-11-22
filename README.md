@@ -12,7 +12,7 @@ Vi clonade Veronicas och gjorde en nystart. Sedan har vi gjort en massa TODO så
 Vi tror att vi kommer köra 2st WinForm och 1st ConsoleApp.
 ---
 - 23/11 Prata med Björn om testning och hur vi kan implemetera det i våra tidigare. Koda på egen hand och ihop på Discord. 
-- 24/11 Gemensamt arbete discord. 
+- 24/11 Arbeta gemensamt på discord. 
 - 25/11 Arbeta ihop på skolan. 
 - 26/11 Gemensamt arbete, avstämning av hur det går, ta tidig helg. 
 - 29/11 Refactora koder och annat ihop, få det till en. 
