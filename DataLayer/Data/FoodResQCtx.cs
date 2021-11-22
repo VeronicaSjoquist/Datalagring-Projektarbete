@@ -16,7 +16,7 @@ namespace DataLayer.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=FoodResQDb");
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=ProjektarbeteDB");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
