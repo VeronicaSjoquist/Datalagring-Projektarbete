@@ -9,7 +9,7 @@ Arbetsplan:
 Idag har vi roat oss med att titta på varandras inlämning 2, diskuterat för och nackdelar med dom olika. 
 Detta slutade med att vi valde Veronicas, efter att i sedan hamnade i problem med namespace så gjorde vi om projektet från grunden. 
 Vi clonade Veronicas och gjorde en nystart. Sedan har vi gjort en massa TODO så vi har en plan. Även skapat en readme med ett grovt schema och vi kan använda denna som logg för att hjälpa oss i projektskriandet sedan. Vi gör lite justeringar på listorna så att det finns Username och Password så att vi sedan om vi vill kan välja att jobba med inloggning. 
-Vi tror att vi kommer köra 2 WinForm och 1 ConsoleApp.
+Vi tror att vi kommer köra 2st WinForm och 1st ConsoleApp.
 ---
 - 23/11 Prata med Björn om testning och hur vi kan implemetera det i våra tidigare. Koda på egen hand och ihop på Discord. 
 - 24/11 Gemensamt arbete discord. 
