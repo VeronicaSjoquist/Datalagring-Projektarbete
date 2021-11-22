@@ -22,7 +22,10 @@ namespace DataLayer.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Customer>()
-                .HasIndex(e => e.Name).IsUnique();
+                .HasIndex(e => e.Username).IsUnique();
+
+            modelBuilder.Entity<Restaurant>()
+                .HasIndex(e => e.Username).IsUnique();
         }
     }
 }

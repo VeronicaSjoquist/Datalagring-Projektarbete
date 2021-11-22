@@ -77,9 +77,9 @@ namespace DataLayer.Backend
 
                 var customers = new List<Customer>
                 {
-                    new Customer{Name = "Theo"},
-                    new Customer{Name = "Kim"},
-                    new Customer{Name = "Veronica"},
+                    new Customer{Name = "Theo", Username = "Cus1", Password = "123"},
+                    new Customer{Name = "Kim", Username = "Cus2", Password = "123"},
+                    new Customer{Name = "Veronica", Username = "Cus3", Password = "123"},
                 };
 
                 ctx.AddRange(customers);
@@ -87,9 +87,9 @@ namespace DataLayer.Backend
 
                 var restaurants = new List<Restaurant>
                 {
-                    new Restaurant {Name = "Theos Ricehouse"},
-                    new Restaurant {Name = "Kanelbulle Kim"},
-                    new Restaurant {Name = "Veronicas Köttfärssås"}
+                    new Restaurant {Name = "Theos Ricehouse", Username = "Res1", Password = "123"},
+                    new Restaurant {Name = "Kanelbulle Kim", Username = "Res2", Password = "123"},
+                    new Restaurant {Name = "Veronicas Köttfärssås", Username = "Res3", Password = "123"}
                 };
 
                 ctx.AddRange(restaurants);
