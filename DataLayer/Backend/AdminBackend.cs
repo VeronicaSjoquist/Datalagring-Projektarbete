@@ -72,7 +72,7 @@ namespace DataLayer.Backend
         }
 
         //En metod för att skapa om och seeda databasen
-        public void CreateAndSeedDb()
+        public void CreateAndSeedDb() //Jag ändrade denna till static för att kunna använda den i testerna. - Joakim
         {
             using (var ctx = new FoodResQCtx())
             {

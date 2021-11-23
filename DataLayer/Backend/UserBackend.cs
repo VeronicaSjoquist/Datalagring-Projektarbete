@@ -16,6 +16,7 @@ namespace DataLayer.Backend
             {
                 var query = ctx.Foodboxes
                     .Include(e => e.restaurant)
+                    .Include(e => e.customer)
                     .Where(e => e.customer == null && e.Type == type)
                     .OrderBy(e => e.Price);
 
@@ -38,8 +39,9 @@ namespace DataLayer.Backend
                 }
 
                 foodBox.customer = customer;
-
+                
                 ctx.SaveChanges();
+                //ctx.Update(customer);
             }
         }
     }
