@@ -37,22 +37,23 @@ namespace TestSuite
 
             adminBackend.CreateAndSeedDb();
 
-            using var ctx = new FoodResQCtx();
-            
-            var foodBox = ctx.Foodboxes.Find(3);
-            Assert.Null(foodBox.customer);
+            using (var ctx = new FoodResQCtx())
+            {
+                var foodBox = ctx.Foodboxes.Find(3);
+                Assert.Null(foodBox.customer);
+            }
             
             userBackend.BuyFoodBox(3,1);
-            
-            using var ctx2 = new FoodResQCtx(); //Gör en ny koppling med den uppdaterade databasen.
 
-            var query = ctx2.Foodboxes
-                .Include(e => e.customer)
-                .Where(e => e.ID == 3);
+            using (var ctx = new FoodResQCtx())
+            {
+                var query = ctx.Foodboxes
+                    .Include(e => e.customer)
+                    .Where(e => e.ID == 3);
 
-            foodBox = query.FirstOrDefault();
-            Assert.Equal(1, foodBox.customer.ID);
-
+                var foodBox = query.FirstOrDefault();
+                Assert.Equal(1, foodBox.customer.ID);
+            }
         }
     }
 }
