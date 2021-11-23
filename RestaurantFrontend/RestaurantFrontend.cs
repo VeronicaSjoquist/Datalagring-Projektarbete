@@ -39,7 +39,6 @@ namespace RestaurantFrontend
 
         private void Enter_Click(object sender, EventArgs e)
         {
-
             try
             {
                 Restaurant restaurantToLogin =
@@ -51,13 +50,9 @@ namespace RestaurantFrontend
             {
                 MessageBox.Show(ex.Message);
             }
-
-
-
-
-
+            
             textBox_Username.Clear();
-           textBox_Password.Clear();
+            textBox_Password.Clear();
 
         }
     }
