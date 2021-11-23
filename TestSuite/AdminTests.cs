@@ -33,7 +33,10 @@ namespace TestSuite
         [Fact]
         public void TestShowAllRestaurants()
         {
+            var restaurants = admin.ShowAllRestaurants();
 
+            Assert.NotEmpty(restaurants);
+            Assert.Equal("Theos Ricehouse", restaurants[0].Name);
         }
     }
 }
