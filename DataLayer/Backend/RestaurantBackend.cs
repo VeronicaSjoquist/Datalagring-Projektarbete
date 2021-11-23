@@ -49,12 +49,12 @@ namespace DataLayer.Backend
             }
         }
 
-        public Restaurant LoginRestaurant(string Username, string password)
+        public Restaurant LoginRestaurant(string username, string password)
         {
             using var ctx = new FoodResQCtx();
 
             //query restrant
-            var query = ctx.Restaurants.Where(r => r.Username == Username)
+            var query = ctx.Restaurants.Where(r => r.Username == username)
                 .Include(r=>r.FoodBoxes);
 
             //Find resturant
@@ -64,7 +64,7 @@ namespace DataLayer.Backend
             if (resturant == null) throw new Exception("Username not found!");
             
             // check password match
-            if(resturant.Password != password) throw new Exception("Invalid password!");
+            if (resturant.Password != password) throw new Exception("Invalid password!");
 
             return resturant;
 

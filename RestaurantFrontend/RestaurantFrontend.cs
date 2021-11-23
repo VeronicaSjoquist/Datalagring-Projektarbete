@@ -16,10 +16,14 @@ namespace RestaurantFrontend
     {
 
         private readonly RestaurantBackend _restaurantBackend;
+        private readonly AdminBackend _adminBackend;
+
         public RestaurantFrontend()
         {
             InitializeComponent();
             _restaurantBackend = new RestaurantBackend();
+            _adminBackend = new AdminBackend();
+            _adminBackend.CreateAndSeedDb();
 
         }
 
@@ -35,16 +39,24 @@ namespace RestaurantFrontend
 
         private void Enter_Click(object sender, EventArgs e)
         {
+
             try
             {
-                Restaurant restaurantToLogin = _restaurantBackend.LoginRestaurant(textBox_Username.Text, textBox_Password.Text);
+                Restaurant restaurantToLogin =
+                    _restaurantBackend.LoginRestaurant(textBox_Username.Text, textBox_Password.Text);
+                MessageBox.Show($"Welcome {restaurantToLogin.Name}");
             }
-            catch (Exception exception)
+
+            catch (Exception ex)
             {
-                MessageBox.Show(exception.Message);
+                MessageBox.Show(ex.Message);
             }
-            
-           textBox_Username.Clear();
+
+
+
+
+
+            textBox_Username.Clear();
            textBox_Password.Clear();
 
         }
