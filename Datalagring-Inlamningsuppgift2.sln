@@ -3,19 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{F02E6C74-1AB0-4523-B4EB-748B0416ECB5}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataLayer", "DataLayer\DataLayer.csproj", "{8FB0655C-2D5A-4334-88DE-E75F347E72B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserFrontend", "UserFrontend\UserFrontend.csproj", "{6442C8FD-AA3F-4288-85B5-4E947C7920CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserFrontend", "UserFrontend\UserFrontend.csproj", "{6442C8FD-AA3F-4288-85B5-4E947C7920CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantFrontend", "RestaurantFrontend\RestaurantFrontend.csproj", "{28BC3A72-24C6-4B50-AD37-E880DB0A3EAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestaurantFrontend", "RestaurantFrontend\RestaurantFrontend.csproj", "{28BC3A72-24C6-4B50-AD37-E880DB0A3EAA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{A734B075-5DDA-484D-B594-03727493E5C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSuite", "TestSuite\TestSuite.csproj", "{347C2435-8FC2-474F-9D3F-4EA19DBC21E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestSuite", "TestSuite\TestSuite.csproj", "{347C2435-8FC2-474F-9D3F-4EA19DBC21E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminFrontend", "AdminFrontend\AdminFrontend.csproj", "{9A3E3066-178D-46A6-B384-A2AD5D01D28D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminFrontend", "AdminFrontend\AdminFrontend.csproj", "{9A3E3066-178D-46A6-B384-A2AD5D01D28D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F02E6C74-1AB0-4523-B4EB-748B0416ECB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F02E6C74-1AB0-4523-B4EB-748B0416ECB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F02E6C74-1AB0-4523-B4EB-748B0416ECB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F02E6C74-1AB0-4523-B4EB-748B0416ECB5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8FB0655C-2D5A-4334-88DE-E75F347E72B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8FB0655C-2D5A-4334-88DE-E75F347E72B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FB0655C-2D5A-4334-88DE-E75F347E72B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -52,7 +46,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{F02E6C74-1AB0-4523-B4EB-748B0416ECB5} = {A734B075-5DDA-484D-B594-03727493E5C3}
 		{6442C8FD-AA3F-4288-85B5-4E947C7920CD} = {A734B075-5DDA-484D-B594-03727493E5C3}
 		{28BC3A72-24C6-4B50-AD37-E880DB0A3EAA} = {A734B075-5DDA-484D-B594-03727493E5C3}
 		{9A3E3066-178D-46A6-B384-A2AD5D01D28D} = {A734B075-5DDA-484D-B594-03727493E5C3}
