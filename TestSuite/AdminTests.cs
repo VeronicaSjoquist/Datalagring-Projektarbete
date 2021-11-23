@@ -1,6 +1,8 @@
 using System;
+using System.Linq;
 using DataLayer.Backend;
 using DataLayer.Data;
+using Microsoft.EntityFrameworkCore;
 using Xunit;
 
 namespace TestSuite
@@ -17,71 +19,99 @@ namespace TestSuite
         [Fact]
         public void TestCreateAndSeed()
         {
-            using var ctx = new FoodResQCtx();
-            
-            var customers = ctx.Customers;
-            var restaurants = ctx.Restaurants;
-            var foodboxes = ctx.Foodboxes;
+            using (var ctx = new FoodResQCtx())
+            {
+                var customers = ctx.Customers;
+                var restaurants = ctx.Restaurants;
+                var foodboxes = ctx.Foodboxes;
 
-            ctx.Database.EnsureDeleted();
-            ctx.SaveChanges();
+                ctx.Database.EnsureDeleted();
+                ctx.SaveChanges();
 
-            Assert.ThrowsAny<Exception>(() => Assert.Empty(customers));
+                Assert.ThrowsAny<Exception>(() => Assert.Empty(customers));
 
-            ctx.Database.EnsureCreated();
+                ctx.Database.EnsureCreated();
 
-            Assert.Empty(customers);
-            Assert.Empty(restaurants);
-            Assert.Empty(foodboxes);
-            
-            admin.CreateAndSeedDb();
+                Assert.Empty(customers);
+                Assert.Empty(restaurants);
+                Assert.Empty(foodboxes);
 
-            Assert.NotEmpty(customers);
-            Assert.NotEmpty(restaurants);
-            Assert.NotEmpty(foodboxes);
-            
+                admin.CreateAndSeedDb();
+
+                Assert.NotEmpty(customers);
+                Assert.NotEmpty(restaurants);
+                Assert.NotEmpty(foodboxes);
+            }
         }
 
         [Fact]
         public void TestShowAllRestaurants()
         {
-            using var ctx = new FoodResQCtx();
+            using (var ctx = new FoodResQCtx())
+            {
+                ctx.Database.EnsureDeleted();
+                ctx.SaveChanges();
+                ctx.Database.EnsureCreated();
 
-            ctx.Database.EnsureDeleted();
-            ctx.SaveChanges();
-            ctx.Database.EnsureCreated();
-            
-            var restaurants = admin.ShowAllRestaurants();
+                var restaurants = admin.ShowAllRestaurants();
 
-            Assert.Empty(restaurants);
+                Assert.Empty(restaurants);
 
-            admin.CreateAndSeedDb();
+                admin.CreateAndSeedDb();
 
-            restaurants = admin.ShowAllRestaurants();
+                restaurants = admin.ShowAllRestaurants();
 
-            Assert.NotEmpty(restaurants);
-            Assert.Equal("Theos Ricehouse", restaurants[0].Name);
+                Assert.NotEmpty(restaurants);
+                Assert.Equal("Theos Ricehouse", restaurants[0].Name);
+            }
         }
 
         [Fact]
         public void TestShowAllCustomers()
         {
-            using var ctx = new FoodResQCtx();
+            using (var ctx = new FoodResQCtx())
+            {
+                ctx.Database.EnsureDeleted();
+                ctx.SaveChanges();
+                ctx.Database.EnsureCreated();
 
-            ctx.Database.EnsureDeleted();
-            ctx.SaveChanges();
-            ctx.Database.EnsureCreated();
+                var customers = admin.ShowAllCustomers();
 
-            var customers = admin.ShowAllCustomers();
+                Assert.Empty(customers);
 
-            Assert.Empty(customers);
+                admin.CreateAndSeedDb();
 
+                customers = admin.ShowAllCustomers();
+
+                Assert.NotEmpty(customers);
+                Assert.Equal("Theo", customers[0].Name);
+            }
+        }
+
+        [Fact]
+        public void TestAddNewRestaurant()
+        {
             admin.CreateAndSeedDb();
 
-            customers = admin.ShowAllCustomers();
+            using (var ctx = new FoodResQCtx())
+            {
+                var query = ctx.Restaurants
+                    .Where(e => e.Name == "newRestaurant");
 
-            Assert.NotEmpty(customers);
-            Assert.Equal("Theo", customers[0].Name);
+                var notAdded = query.FirstOrDefault();
+
+                Assert.Null(notAdded);
+
+                admin.AddRestaurant("newRestaurant");
+
+                query = ctx.Restaurants
+                    .Where(e => e.Name == "newRestaurant");
+
+                var addedRestaurant = query.FirstOrDefault();
+
+                Assert.NotNull(addedRestaurant);
+                Assert.Equal("newRestaurant", addedRestaurant.Name);
+            }
         }
     }
 }
