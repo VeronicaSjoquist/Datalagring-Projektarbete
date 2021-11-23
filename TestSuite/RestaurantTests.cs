@@ -12,12 +12,12 @@ namespace TestSuite
 {
     public class RestaurantTests
     {
-        private RestaurantBackend resturantBackend;
+        private RestaurantBackend restaurantBackend;
         private AdminBackend adminBackend;
 
         public RestaurantTests()
         {
-            resturantBackend = new RestaurantBackend();
+            restaurantBackend = new RestaurantBackend();
             adminBackend = new AdminBackend();
         }
 
@@ -25,13 +25,8 @@ namespace TestSuite
         void ShowRestaurantSoldBoxesTest()
         {
             adminBackend.CreateAndSeedDb();
-
-            var result = new List<FoodBox>();
-
-            foreach (var foodbox in resturantBackend.ShowSoldBoxes(1))
-            {
-                result.Add(foodbox);
-            }
+            
+            var result = restaurantBackend.ShowSoldBoxes(1);
 
             Assert.Equal("Fried Rice",result[0].Name);
             Assert.Equal("Meat",result[1].Type);
@@ -44,13 +39,25 @@ namespace TestSuite
             adminBackend.CreateAndSeedDb();
             using var context = new FoodResQCtx();
 
-            resturantBackend.AddFoodBox("AddedName","AddedType",14,1);
-
+            //säkerställ att det inte finns nångon sådan matlåda i databasen
             var query = context.Foodboxes.Where(f => f.Name == "AddedName" && f.Type == "AddedType");
-            var addedFoodbox = query.First();
+            var NotaddedFoodbox = query.FirstOrDefault();
 
+            Assert.Null(NotaddedFoodbox);
+
+            // Använd metoden för att lägga till önskad matlåda i databasen
+            restaurantBackend.AddFoodBox("AddedName","AddedType",14,1);
+
+            // Leta på nytt efter den matlådan
+            query = context.Foodboxes.Where(f => f.Name == "AddedName" && f.Type == "AddedType");
+            var addedFoodbox = query.FirstOrDefault();
+
+            // kolla så allt stämmer
+            Assert.NotNull(addedFoodbox);
             Assert.Equal("AddedName", addedFoodbox.Name);
             Assert.Null(addedFoodbox.customer);
+            
+
         }
 
         [Fact]
@@ -59,15 +66,14 @@ namespace TestSuite
             adminBackend.CreateAndSeedDb();
             using var context = new FoodResQCtx();
 
-            var SucssesLogin = resturantBackend.LoginRestaurant("Res1", "123");
+            var SucssesLogin = restaurantBackend.LoginRestaurant("Res1", "123");
             Assert.Equal("Theos Ricehouse", SucssesLogin.Name);
             
-            Exception exeption = Assert.ThrowsAny<Exception>(() => resturantBackend.LoginRestaurant("InvalidUsername", "123"));
+            Exception exeption = Assert.ThrowsAny<Exception>(() => restaurantBackend.LoginRestaurant("InvalidUsername", "123"));
             Assert.Equal("Username not found!", exeption.Message);
 
-            exeption = Assert.ThrowsAny<Exception>(() => resturantBackend.LoginRestaurant("Res1", "WrongPassword"));
+            exeption = Assert.ThrowsAny<Exception>(() => restaurantBackend.LoginRestaurant("Res1", "WrongPassword"));
             Assert.Equal("Invalid password!", exeption.Message);
-
         }
     }
 }
