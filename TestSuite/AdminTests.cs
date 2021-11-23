@@ -33,10 +33,23 @@ namespace TestSuite
         [Fact]
         public void TestShowAllRestaurants()
         {
+            admin.CreateAndSeedDb();
+
             var restaurants = admin.ShowAllRestaurants();
 
             Assert.NotEmpty(restaurants);
             Assert.Equal("Theos Ricehouse", restaurants[0].Name);
+        }
+
+        [Fact]
+        public void TestShowAllCustomers()
+        {
+            admin.CreateAndSeedDb();
+
+            var customers = admin.ShowAllCustomers();
+
+            Assert.NotEmpty(customers);
+            Assert.Equal("Theo", customers[0].Name);
         }
     }
 }
