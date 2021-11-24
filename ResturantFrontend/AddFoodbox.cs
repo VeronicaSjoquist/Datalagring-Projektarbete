@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataLayer.Backend;
 using DataLayer.Model;
 
 namespace ResturantFrontend
@@ -14,8 +15,10 @@ namespace ResturantFrontend
     public partial class AddFoodbox : Form
     {
         private Restaurant _restaurant;
+        private RestaurantBackend _restaurantBackend;
         public AddFoodbox(Restaurant restaurant)
         {
+            _restaurantBackend = new RestaurantBackend();
             _restaurant = restaurant;
             InitializeComponent();
         }
@@ -30,6 +33,35 @@ namespace ResturantFrontend
         private void AddFoodbox_Load(object sender, EventArgs e)
         {
             textBox_PrintRestauratName.Text = $"{_restaurant.Name}";
+        }
+
+        private void button_Enter_Click(object sender, EventArgs e)
+        {
+            decimal price;
+            if (decimal.TryParse(textBox_price.Text, out price))
+            {
+                try
+                {
+                    _restaurantBackend.AddFoodBox(textBox_Name.Text, textBox_type.Text, price, _restaurant);
+
+                    MessageBox.Show($"{textBox_Name.Text} is now up for sale");
+
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Enter price in numbers!");
+                textBox_price.Clear();
+            }
+
+            textBox_Name.Clear();
+            textBox_price.Clear();
+            textBox_type.Clear();
+
         }
     }
 }

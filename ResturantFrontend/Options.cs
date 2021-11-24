@@ -21,7 +21,7 @@ namespace ResturantFrontend
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button_AddBox_Click(object sender, EventArgs e)
         {
             this.Hide();
             AddFoodbox addFoodbox = new AddFoodbox(_restaurant);
