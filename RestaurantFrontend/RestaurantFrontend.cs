@@ -44,6 +44,7 @@ namespace RestaurantFrontend
                 Restaurant restaurantToLogin =
                     _restaurantBackend.LoginRestaurant(textBox_Username.Text, textBox_Password.Text);
                 MessageBox.Show($"Welcome {restaurantToLogin.Name}");
+
             }
 
             catch (Exception ex)
