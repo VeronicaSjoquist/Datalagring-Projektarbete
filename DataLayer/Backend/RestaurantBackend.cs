@@ -12,13 +12,13 @@ namespace DataLayer.Backend
     public class RestaurantBackend
     {
         //En metod för att få en lista över alla sålda matlådor för ett restaurang objekt
-        //TODO includerade customer och resturant för lite roligare test
-        public List<FoodBox> ShowSoldBoxes(int RestaurantId)
+        //TODO includerade customer och resturant för lite roligare test OCH ändrade till att ta in ett resturaurant objekt
+        public List<FoodBox> ShowSoldBoxes(Restaurant restaurant)
         {
             using (var ctx = new FoodResQCtx())
             {
                 var query = ctx.Foodboxes
-                    .Where(e => e.customer != null && e.restaurant.ID == RestaurantId)
+                    .Where(e => e.customer != null && e.restaurant == restaurant)
                     .Include(e=>e.customer)
                     .Include(e=>e.restaurant);
 

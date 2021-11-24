@@ -15,15 +15,17 @@ namespace ResturantFrontend
     public partial class ViewSales : Form
     {
         private RestaurantBackend _restaurantBackend;
-        public ViewSales()
+        private Restaurant _restaurant;
+        public ViewSales(Restaurant restaurant)
         {
             InitializeComponent();
             _restaurantBackend = new RestaurantBackend();
+            _restaurant = restaurant;
         }
 
         private void ViewSales_Load(object sender, EventArgs e)
         {
-            var soldFoodboxes = _restaurantBackend.ShowSoldBoxes();
+            var soldFoodboxes = _restaurantBackend.ShowSoldBoxes(_restaurant);
 
         }
     }

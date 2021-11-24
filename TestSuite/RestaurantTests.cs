@@ -25,9 +25,17 @@ namespace TestSuite
         void ShowRestaurantSoldBoxesTest()
         {
             adminBackend.CreateAndSeedDb();
-            
-            var result = restaurantBackend.ShowSoldBoxes(1);
+            using var context = new FoodResQCtx();
 
+            //Hämta ett befinligt resturang objekt  från databasen
+            Restaurant restaurant = context.Restaurants.Find(1);
+
+            //säkerställ att den resturangen finns
+            Assert.NotNull(restaurant);
+
+            var result = restaurantBackend.ShowSoldBoxes(restaurant);
+
+            //Kolla så att innehållet i listan stämmer
             Assert.Equal("Fried Rice",result[0].Name);
             Assert.Equal("Meat",result[1].Type);
             Assert.NotNull(result[1].customer);
