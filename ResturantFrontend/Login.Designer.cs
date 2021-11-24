@@ -86,6 +86,7 @@
             this.button_Enter.TabIndex = 4;
             this.button_Enter.Text = "Enter";
             this.button_Enter.UseVisualStyleBackColor = true;
+            this.button_Enter.Click += new System.EventHandler(this.button_Enter_Click);
             // 
             // textBox_Username
             // 

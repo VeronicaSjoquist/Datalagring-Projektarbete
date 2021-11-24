@@ -36,27 +36,39 @@ namespace TestSuite
         [Fact]
         void AddNewFoodBoxTest()
         {
+            //skerställ att databasen existerar och är seedad.
+
             adminBackend.CreateAndSeedDb();
-            using var context = new FoodResQCtx();
+            using (var context = new FoodResQCtx())
+            {
 
-            //säkerställ att det inte finns nångon sådan matlåda i databasen
-            var query = context.Foodboxes.Where(f => f.Name == "AddedName" && f.Type == "AddedType");
-            var NotaddedFoodbox = query.FirstOrDefault();
+                //säkerställ att det inte finns nångon sådan matlåda i databasen
+                var query = context.Foodboxes.Where(f => f.Name == "AddedName" && f.Type == "AddedType");
+                var NotaddedFoodbox = query.FirstOrDefault();
 
-            Assert.Null(NotaddedFoodbox);
+                Assert.Null(NotaddedFoodbox);
 
-            // Använd metoden för att lägga till önskad matlåda i databasen
-            restaurantBackend.AddFoodBox("AddedName","AddedType",14,1);
+                //Hämta ett befinligt resturang objekt  från databasen
+                Restaurant restaurant = context.Restaurants.Find(1);
 
-            // Leta på nytt efter den matlådan
-            query = context.Foodboxes.Where(f => f.Name == "AddedName" && f.Type == "AddedType");
-            var addedFoodbox = query.FirstOrDefault();
+                //säkerställ att den resturangen finns
+                Assert.NotNull(restaurant);
 
-            // kolla så allt stämmer
-            Assert.NotNull(addedFoodbox);
-            Assert.Equal("AddedName", addedFoodbox.Name);
-            Assert.Null(addedFoodbox.customer);
-            
+                // Använd metoden för att lägga till önskad matlåda i databasen
+                restaurantBackend.AddFoodBox("AddedName", "AddedType", 14, restaurant);
+            }
+
+            using (var context = new FoodResQCtx())
+            {
+                // Leta på nytt efter den matlådan
+                var query = context.Foodboxes.Where(f => f.Name == "AddedName" && f.Type == "AddedType");
+                var addedFoodbox = query.FirstOrDefault();
+
+                // kolla så att den nu finns
+                Assert.NotNull(addedFoodbox);
+                Assert.Equal("AddedName", addedFoodbox.Name);
+                Assert.Null(addedFoodbox.customer);
+            }
 
         }
 

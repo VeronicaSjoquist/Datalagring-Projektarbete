@@ -7,14 +7,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataLayer.Model;
 
 namespace ResturantFrontend
 {
     public partial class AddFoodbox : Form
     {
-        public AddFoodbox()
+        private Restaurant _restaurant;
+        public AddFoodbox(Restaurant restaurant)
         {
+            _restaurant = restaurant;
             InitializeComponent();
+        }
+
+        private void button_back_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Options options = new Options(_restaurant);
+            options.Show();
+        }
+
+        private void AddFoodbox_Load(object sender, EventArgs e)
+        {
+            textBox_PrintRestauratName.Text = $"{_restaurant.Name}";
         }
     }
 }
