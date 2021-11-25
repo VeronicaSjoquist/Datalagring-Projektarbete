@@ -33,5 +33,13 @@ namespace ResturantFrontend
             textBox_PrintRestauratName.Text = $"{_restaurant.Name}";
 
         }
+
+        private void button_ViewSales_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ViewSales viewSales = new ViewSales(_restaurant);
+            viewSales.Show();
+
+        }
     }
 }

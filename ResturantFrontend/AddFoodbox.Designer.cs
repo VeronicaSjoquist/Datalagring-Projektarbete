@@ -45,9 +45,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Perpetua Titling MT", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(240, 47);
+            this.label1.Location = new System.Drawing.Point(224, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(299, 47);
+            this.label1.Size = new System.Drawing.Size(373, 59);
             this.label1.TabIndex = 2;
             this.label1.Text = "Food Rescue";
             // 
@@ -55,9 +55,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(213, 210);
+            this.label3.Location = new System.Drawing.Point(233, 271);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 28);
+            this.label3.Size = new System.Drawing.Size(82, 35);
             this.label3.TabIndex = 5;
             this.label3.Text = "Name";
             // 
@@ -65,9 +65,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(223, 250);
+            this.label2.Location = new System.Drawing.Point(233, 332);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 28);
+            this.label2.Size = new System.Drawing.Size(69, 35);
             this.label2.TabIndex = 6;
             this.label2.Text = "Price";
             // 
@@ -75,9 +75,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(225, 290);
+            this.label4.Location = new System.Drawing.Point(235, 388);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 28);
+            this.label4.Size = new System.Drawing.Size(67, 35);
             this.label4.TabIndex = 7;
             this.label4.Text = "Type";
             // 
@@ -85,39 +85,43 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(318, 158);
+            this.label5.Location = new System.Drawing.Point(332, 203);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(133, 28);
+            this.label5.Size = new System.Drawing.Size(166, 35);
             this.label5.TabIndex = 8;
             this.label5.Text = "Add Foodbox";
             // 
             // textBox_Name
             // 
-            this.textBox_Name.Location = new System.Drawing.Point(318, 210);
+            this.textBox_Name.Location = new System.Drawing.Point(345, 280);
+            this.textBox_Name.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox_Name.Name = "textBox_Name";
-            this.textBox_Name.Size = new System.Drawing.Size(134, 23);
+            this.textBox_Name.Size = new System.Drawing.Size(153, 27);
             this.textBox_Name.TabIndex = 9;
             // 
             // textBox_price
             // 
-            this.textBox_price.Location = new System.Drawing.Point(318, 255);
+            this.textBox_price.Location = new System.Drawing.Point(345, 340);
+            this.textBox_price.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox_price.Name = "textBox_price";
-            this.textBox_price.Size = new System.Drawing.Size(134, 23);
+            this.textBox_price.Size = new System.Drawing.Size(153, 27);
             this.textBox_price.TabIndex = 10;
             // 
             // textBox_type
             // 
-            this.textBox_type.Location = new System.Drawing.Point(318, 298);
+            this.textBox_type.Location = new System.Drawing.Point(345, 397);
+            this.textBox_type.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox_type.Name = "textBox_type";
-            this.textBox_type.Size = new System.Drawing.Size(134, 23);
+            this.textBox_type.Size = new System.Drawing.Size(153, 27);
             this.textBox_type.TabIndex = 11;
             // 
             // button_Enter
             // 
             this.button_Enter.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_Enter.Location = new System.Drawing.Point(329, 359);
+            this.button_Enter.Location = new System.Drawing.Point(345, 475);
+            this.button_Enter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_Enter.Name = "button_Enter";
-            this.button_Enter.Size = new System.Drawing.Size(98, 40);
+            this.button_Enter.Size = new System.Drawing.Size(112, 53);
             this.button_Enter.TabIndex = 12;
             this.button_Enter.Text = "Enter";
             this.button_Enter.UseVisualStyleBackColor = true;
@@ -126,9 +130,10 @@
             // button_back
             // 
             this.button_back.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_back.Location = new System.Drawing.Point(562, 47);
+            this.button_back.Location = new System.Drawing.Point(628, 46);
+            this.button_back.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_back.Name = "button_back";
-            this.button_back.Size = new System.Drawing.Size(98, 40);
+            this.button_back.Size = new System.Drawing.Size(112, 53);
             this.button_back.TabIndex = 13;
             this.button_back.Text = "Back";
             this.button_back.UseVisualStyleBackColor = true;
@@ -139,16 +144,17 @@
             this.textBox_PrintRestauratName.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox_PrintRestauratName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_PrintRestauratName.Font = new System.Drawing.Font("Perpetua Titling MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox_PrintRestauratName.Location = new System.Drawing.Point(293, 106);
+            this.textBox_PrintRestauratName.Location = new System.Drawing.Point(242, 127);
+            this.textBox_PrintRestauratName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox_PrintRestauratName.Name = "textBox_PrintRestauratName";
-            this.textBox_PrintRestauratName.Size = new System.Drawing.Size(187, 23);
+            this.textBox_PrintRestauratName.Size = new System.Drawing.Size(331, 29);
             this.textBox_PrintRestauratName.TabIndex = 14;
             // 
             // AddFoodbox
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(802, 581);
             this.Controls.Add(this.textBox_PrintRestauratName);
             this.Controls.Add(this.button_back);
             this.Controls.Add(this.button_Enter);
@@ -160,6 +166,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximumSize = new System.Drawing.Size(820, 628);
+            this.MinimumSize = new System.Drawing.Size(820, 628);
             this.Name = "AddFoodbox";
             this.Text = "AddFoodbox";
             this.Load += new System.EventHandler(this.AddFoodbox_Load);

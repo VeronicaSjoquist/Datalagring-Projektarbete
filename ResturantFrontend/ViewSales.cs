@@ -26,6 +26,15 @@ namespace ResturantFrontend
         private void ViewSales_Load(object sender, EventArgs e)
         {
             var soldFoodboxes = _restaurantBackend.ShowSoldBoxes(_restaurant);
+            listView1.Items.Clear();
+            foreach (var foodbox in soldFoodboxes)
+            {
+                var row = new string[] {foodbox.Name, foodbox.Price.ToString(), foodbox.Type};
+                var listViewItem = new ListViewItem(row);
+                listViewItem.Tag = foodbox;
+
+                listView1.Items.Add(listViewItem);
+            }
 
         }
     }
