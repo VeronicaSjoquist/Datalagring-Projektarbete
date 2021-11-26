@@ -26,7 +26,21 @@ namespace DataLayer.Backend
             }
         }
 
-        
+        //En metod för att få en lista över alla osålda matlådor för ett restaurang objekt
+        public List<FoodBox> ShowUnsoldBoxes(Restaurant restaurant)
+        {
+            using (var ctx = new FoodResQCtx())
+            {
+                var query = ctx.Foodboxes
+                    .Where(e => e.customer == null && e.restaurant == restaurant)
+                    .Include(e => e.customer)
+                    .Include(e => e.restaurant);
+
+                return query.ToList();
+            }
+        }
+
+
         //En metod för att lägga till ett nytt matlådeobjekt för en restaurang
         //TODO ändrade så metoden tog in ett resturang objekt istället för int. Kommer underlätta för frontend
         public void AddFoodBox(string name, string type, decimal price, Restaurant restaurant)
