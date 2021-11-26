@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,9 @@ namespace DataLayer.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=ProjektarbeteDB");
+            optionsBuilder
+                .LogTo(c => Debug.WriteLine(c))
+                .UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=ProjektarbeteDB");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
