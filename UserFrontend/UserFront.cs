@@ -94,6 +94,12 @@ namespace UserFrontend
             hideSubMenu();
         }
 
+        private void btwCustomerHistory_Click(object sender, EventArgs e)
+        {
+            openWorkSpace(new CustomerHistory());
+            hideSubMenu();
+        }
+
         #endregion
 
         #region RestaurantMenu
@@ -170,5 +176,7 @@ namespace UserFrontend
             workSpace.BringToFront();
             workSpace.Show();
         }
+
+        
     }
 } 

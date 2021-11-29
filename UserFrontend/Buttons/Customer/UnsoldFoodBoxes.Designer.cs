@@ -30,7 +30,7 @@
         {
             this.btnReturnFromUnsoldFoodBoxes = new System.Windows.Forms.Button();
             this.btnUnsoldFoodFishBoxes = new System.Windows.Forms.Button();
-            this.listUnsold = new System.Windows.Forms.ListView();
+            this.listUnsoldBoxes = new System.Windows.Forms.ListView();
             this.Food = new System.Windows.Forms.ColumnHeader();
             this.Restaurant = new System.Windows.Forms.ColumnHeader();
             this.Price = new System.Windows.Forms.ColumnHeader();
@@ -64,18 +64,18 @@
             this.btnUnsoldFoodFishBoxes.UseVisualStyleBackColor = true;
             this.btnUnsoldFoodFishBoxes.Click += new System.EventHandler(this.btnUnsoldFoodBoxes_Click);
             // 
-            // listUnsold
+            // listUnsoldBoxes
             // 
-            this.listUnsold.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listUnsoldBoxes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Food,
             this.Restaurant,
             this.Price});
-            this.listUnsold.Location = new System.Drawing.Point(20, 177);
-            this.listUnsold.Name = "listUnsold";
-            this.listUnsold.Size = new System.Drawing.Size(495, 163);
-            this.listUnsold.TabIndex = 6;
-            this.listUnsold.UseCompatibleStateImageBehavior = false;
-            this.listUnsold.View = System.Windows.Forms.View.Details;
+            this.listUnsoldBoxes.Location = new System.Drawing.Point(20, 177);
+            this.listUnsoldBoxes.Name = "listUnsoldBoxes";
+            this.listUnsoldBoxes.Size = new System.Drawing.Size(495, 163);
+            this.listUnsoldBoxes.TabIndex = 6;
+            this.listUnsoldBoxes.UseCompatibleStateImageBehavior = false;
+            this.listUnsoldBoxes.View = System.Windows.Forms.View.Details;
             // 
             // Food
             // 
@@ -126,7 +126,7 @@
             this.ClientSize = new System.Drawing.Size(717, 553);
             this.Controls.Add(this.btnUnsoldFoodVeganBoxes);
             this.Controls.Add(this.btnUnsoldFoodMeatBoxes);
-            this.Controls.Add(this.listUnsold);
+            this.Controls.Add(this.listUnsoldBoxes);
             this.Controls.Add(this.btnUnsoldFoodFishBoxes);
             this.Controls.Add(this.btnReturnFromUnsoldFoodBoxes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -141,7 +141,7 @@
 
         private Button btnReturnFromUnsoldFoodBoxes;
         private Button btnUnsoldFoodFishBoxes;
-        private ListView listUnsold;
+        private ListView listUnsoldBoxes;
         private ColumnHeader Food;
         private ColumnHeader Restaurant;
         private ColumnHeader Price;
