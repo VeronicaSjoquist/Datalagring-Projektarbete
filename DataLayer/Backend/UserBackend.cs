@@ -39,9 +39,35 @@ namespace DataLayer.Backend
                 }
 
                 foodBox.customer = customer;
-                
+
                 ctx.SaveChanges();
                 //ctx.Update(customer);
+            }
+        }
+
+        //Joakims extra metod för att lista efter Restaurang
+
+        public List<FoodBox> listUnsoldonRestaurant(string nameof)
+        {
+            using (var ctx = new FoodResQCtx())
+            {
+                var query = ctx.Foodboxes
+                    .Include(e => e.restaurant)
+                    .Include(e => e.customer)
+                    .Where(e => e.customer == null && e.restaurant.Name == nameof)
+                    .OrderBy(e => e.Price);
+
+                return query.ToList();
+            }
+        }
+
+        public List<Customer> userList()
+        {
+            using (var ctx = new FoodResQCtx())
+            {
+                var query = ctx.Customers;
+
+                return query.ToList();
             }
         }
     }
