@@ -19,7 +19,7 @@ namespace UserFrontend.Buttons
 
         private void btnGitWeb_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://youtube.com");
+            System.Diagnostics.Process.Start("https://youtube.com/");//Behöver länka webläsare ev.
         }
 
         private void btnReturnFromDescription_Click(object sender, EventArgs e)
