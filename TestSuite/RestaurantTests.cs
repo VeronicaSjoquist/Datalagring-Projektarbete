@@ -10,6 +10,7 @@ using Xunit;
 
 namespace TestSuite
 {
+    //TODO skapa indipendecy injection
     public class RestaurantTests
     {
         private RestaurantBackend restaurantBackend;
@@ -39,6 +40,24 @@ namespace TestSuite
             Assert.Equal("Fried Rice",result[0].Name);
             Assert.Equal("Meat",result[1].Type);
             Assert.NotNull(result[1].customer);
+        }
+        [Fact]
+        void ShowRestaurantUnsoldBoxesTest()
+        {
+            adminBackend.CreateAndSeedDb();
+            using var context = new FoodResQCtx();
+
+            //Hämta ett befinligt resturang objekt  från databasen
+            Restaurant restaurant = context.Restaurants.Find(1);
+
+            //säkerställ att den resturangen finns
+            Assert.NotNull(restaurant);
+
+            var result = restaurantBackend.ShowUnsoldBoxes(restaurant);
+
+            //Kolla så att innehållet i listan stämmer
+            Assert.Equal("Grilled Rice", result[0].Name);
+            Assert.Null(result[0].customer);
         }
 
         [Fact]

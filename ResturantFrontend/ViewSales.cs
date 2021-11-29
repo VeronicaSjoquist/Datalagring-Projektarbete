@@ -25,11 +25,40 @@ namespace ResturantFrontend
 
         private void ViewSales_Load(object sender, EventArgs e)
         {
+            textBox_PrintRestauratName.Text = $"{_restaurant.Name}";
+
+        }
+
+        private void button_back_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Options options = new Options(_restaurant);
+            options.Show();
+        }
+
+        private void button_SoldBoxses_Click(object sender, EventArgs e)
+        {
+
             var soldFoodboxes = _restaurantBackend.ShowSoldBoxes(_restaurant);
             listView1.Items.Clear();
             foreach (var foodbox in soldFoodboxes)
             {
-                var row = new string[] {foodbox.Name, foodbox.Price.ToString(), foodbox.Type};
+                var row = new string[] { foodbox.Name, foodbox.Price.ToString(), foodbox.Type };
+                var listViewItem = new ListViewItem(row);
+                listViewItem.Tag = foodbox;
+
+                listView1.Items.Add(listViewItem);
+            }
+
+        }
+
+        private void button_UnsoldBoxes_Click(object sender, EventArgs e)
+        {
+            var UnsoldFoodboxes = _restaurantBackend.ShowUnsoldBoxes(_restaurant);
+            listView1.Items.Clear();
+            foreach (var foodbox in UnsoldFoodboxes)
+            {
+                var row = new string[] { foodbox.Name, foodbox.Price.ToString(), foodbox.Type };
                 var listViewItem = new ListViewItem(row);
                 listViewItem.Tag = foodbox;
 
