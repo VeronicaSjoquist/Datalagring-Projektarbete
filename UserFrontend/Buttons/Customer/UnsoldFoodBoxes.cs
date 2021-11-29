@@ -29,7 +29,7 @@ namespace UserFrontend.Buttons.Customer
         {
             UserBackend userBackend = new UserBackend();
             var soldFoodboxes = userBackend.UnsoldFoodBoxes("Fish"); ;
-            listUnsold.Items.Clear();
+            listUnsoldBoxes.Items.Clear();
 
             foreach (var foodbox in soldFoodboxes)
             {
@@ -37,7 +37,7 @@ namespace UserFrontend.Buttons.Customer
                 var listviewItem = new ListViewItem(row);
                 listviewItem.Tag = foodbox;
 
-                listUnsold.Items.Add(listviewItem);
+                listUnsoldBoxes.Items.Add(listviewItem);
             }
         }
 
@@ -45,14 +45,14 @@ namespace UserFrontend.Buttons.Customer
         {
             UserBackend userBackend = new UserBackend();
             var soldFoodboxes = userBackend.UnsoldFoodBoxes("Meat"); ;
-            listUnsold.Items.Clear();
+            listUnsoldBoxes.Items.Clear();
             foreach (var foodbox in soldFoodboxes)
             {
                 var row = new string[] { foodbox.Name, foodbox.restaurant.Name, foodbox.Price.ToString() };
                 var listviewItem = new ListViewItem(row);
                 listviewItem.Tag = foodbox;
 
-                listUnsold.Items.Add(listviewItem);
+                listUnsoldBoxes.Items.Add(listviewItem);
             }
         }
 
@@ -60,14 +60,14 @@ namespace UserFrontend.Buttons.Customer
         {
             UserBackend userBackend = new UserBackend();
             var soldFoodboxes = userBackend.UnsoldFoodBoxes("Vegan"); ;
-            listUnsold.Items.Clear();
+            listUnsoldBoxes.Items.Clear();
             foreach (var foodbox in soldFoodboxes)
             {
                 var row = new string[] { foodbox.Name, foodbox.restaurant.Name, foodbox.Price.ToString() };
                 var listviewItem = new ListViewItem(row);
                 listviewItem.Tag = foodbox;
 
-                listUnsold.Items.Add(listviewItem);
+                listUnsoldBoxes.Items.Add(listviewItem);
             }
         }
 

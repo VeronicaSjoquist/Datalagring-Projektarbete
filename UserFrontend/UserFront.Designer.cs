@@ -54,6 +54,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelWorkSpace = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btwCustomerHistory = new System.Windows.Forms.Button();
             this.panelSideMenu.SuspendLayout();
             this.panelAdmin.SuspendLayout();
             this.paneRestaurant.SuspendLayout();
@@ -82,7 +83,7 @@
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Margin = new System.Windows.Forms.Padding(4);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(265, 553);
+            this.panelSideMenu.Size = new System.Drawing.Size(265, 784);
             this.panelSideMenu.TabIndex = 0;
             // 
             // panelAdmin
@@ -93,7 +94,7 @@
             this.panelAdmin.Controls.Add(this.btnRemoveCustomer);
             this.panelAdmin.Controls.Add(this.btnShowAllCustomers);
             this.panelAdmin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAdmin.Location = new System.Drawing.Point(0, 692);
+            this.panelAdmin.Location = new System.Drawing.Point(0, 744);
             this.panelAdmin.Name = "panelAdmin";
             this.panelAdmin.Size = new System.Drawing.Size(244, 267);
             this.panelAdmin.TabIndex = 8;
@@ -202,7 +203,7 @@
             this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdmin.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAdmin.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAdmin.Location = new System.Drawing.Point(0, 644);
+            this.btnAdmin.Location = new System.Drawing.Point(0, 696);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnAdmin.Size = new System.Drawing.Size(244, 48);
@@ -217,7 +218,7 @@
             this.paneRestaurant.Controls.Add(this.btnAddFoodBox);
             this.paneRestaurant.Controls.Add(this.btnShowSoldBoxes);
             this.paneRestaurant.Dock = System.Windows.Forms.DockStyle.Top;
-            this.paneRestaurant.Location = new System.Drawing.Point(0, 544);
+            this.paneRestaurant.Location = new System.Drawing.Point(0, 596);
             this.paneRestaurant.Name = "paneRestaurant";
             this.paneRestaurant.Size = new System.Drawing.Size(244, 100);
             this.paneRestaurant.TabIndex = 6;
@@ -269,7 +270,7 @@
             this.btnRestaurant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRestaurant.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnRestaurant.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnRestaurant.Location = new System.Drawing.Point(0, 501);
+            this.btnRestaurant.Location = new System.Drawing.Point(0, 553);
             this.btnRestaurant.Name = "btnRestaurant";
             this.btnRestaurant.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnRestaurant.Size = new System.Drawing.Size(244, 43);
@@ -281,12 +282,13 @@
             // 
             // panelCustom
             // 
+            this.panelCustom.Controls.Add(this.btwCustomerHistory);
             this.panelCustom.Controls.Add(this.btnBuyFoodBox);
             this.panelCustom.Controls.Add(this.btnUnsoldFoodBoxes);
             this.panelCustom.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCustom.Location = new System.Drawing.Point(0, 399);
             this.panelCustom.Name = "panelCustom";
-            this.panelCustom.Size = new System.Drawing.Size(244, 102);
+            this.panelCustom.Size = new System.Drawing.Size(244, 154);
             this.panelCustom.TabIndex = 4;
             // 
             // btnBuyFoodBox
@@ -463,26 +465,45 @@
             this.panelWorkSpace.Location = new System.Drawing.Point(265, 0);
             this.panelWorkSpace.MinimumSize = new System.Drawing.Size(717, 553);
             this.panelWorkSpace.Name = "panelWorkSpace";
-            this.panelWorkSpace.Size = new System.Drawing.Size(717, 553);
+            this.panelWorkSpace.Size = new System.Drawing.Size(1379, 784);
             this.panelWorkSpace.TabIndex = 1;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(105, 120);
+            this.pictureBox1.Location = new System.Drawing.Point(436, 236);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(512, 334);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // btwCustomerHistory
+            // 
+            this.btwCustomerHistory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btwCustomerHistory.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btwCustomerHistory.FlatAppearance.BorderSize = 0;
+            this.btwCustomerHistory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
+            this.btwCustomerHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btwCustomerHistory.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btwCustomerHistory.ForeColor = System.Drawing.SystemColors.Window;
+            this.btwCustomerHistory.Location = new System.Drawing.Point(0, 100);
+            this.btwCustomerHistory.Name = "btwCustomerHistory";
+            this.btwCustomerHistory.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btwCustomerHistory.Size = new System.Drawing.Size(244, 50);
+            this.btwCustomerHistory.TabIndex = 2;
+            this.btwCustomerHistory.Text = "CustomerHistory";
+            this.btwCustomerHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btwCustomerHistory.UseVisualStyleBackColor = false;
+            this.btwCustomerHistory.Click += new System.EventHandler(this.btwCustomerHistory_Click);
+            // 
             // UserFront
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(982, 553);
+            this.ClientSize = new System.Drawing.Size(1644, 784);
             this.Controls.Add(this.panelWorkSpace);
             this.Controls.Add(this.panelSideMenu);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -530,5 +551,6 @@
         private Panel panelWorkSpace;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
+        private Button btwCustomerHistory;
     }
 }

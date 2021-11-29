@@ -70,5 +70,18 @@ namespace DataLayer.Backend
                 return query.ToList();
             }
         }
+
+        public List<FoodBox> listofCustomerBuys(int customerId)
+        {
+            using (var ctx = new FoodResQCtx())
+            {
+                var query = ctx.Foodboxes
+                    .Include(e => e.restaurant)
+                    .Include(e => e.customer)
+                    .Where(e => e.customer.ID == customerId);
+
+                return query.ToList();
+            }
+        }
     }
 }
