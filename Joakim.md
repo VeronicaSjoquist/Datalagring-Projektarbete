@@ -1,6 +1,6 @@
-### Joakim Projketrapport
+# Joakim Projektrapport
 
-# Hur gick planeringen?
+## Hur gick planeringen?
 Vi träffades och gjorde en brainstorm ute i min spelloak där vi diskuterade fördelar och nackdlear med våra olika databser. Vi bestlutade att ta Vernoicas som var enkel och tydlig som ger oss stor chans att fokusera på front end. 
 Eftersom vi hade olika ideer om vad som vi ville lägga mest fokus så tog jag User, Anna-Märta Restaurant och Vernonica Backend. Jag hade redan gjort en console så tänkte jag vill träna mer på UI och jobba med WinForm. 
 
@@ -17,7 +17,7 @@ så kort och gått, planeringen i en sådan här grupp har funkat superbra, alla
 Jag hade personligen kunnat inse tidigare att WinForm inte kan göra allt jag vill så hade kunnta bli mindre frusterad. Sedan är ju nackdlenen av att vi är självågende att det vart lite mer koda på eget håll, även om det finns dialog och studer vi sitter ihop. Vilket säkert är så det ser ut många gånger i gemensamma projekt. 
 Resultatet kanske hade kunnat varit lite mer homogent men varje del gör det den skall! 
 
-# Hur gick implementeringen? 
+## Hur gick implementeringen? 
 Då vi valde en enkel och tydlig kod så var det ganska så enkelt att göra frontend till databasen. Det fanns tillfällen vi fick justera lite i koden och i alla fall jag fick lägga till ett par metodet för att få ut listor av vissa saker. Men detta var fortfarande snabbt och lätt med koden som fanns från början! 
 Att implemetera WinForm var en resa i sig att fatta hur den funkar, att ett klick är som att slå enter i consolen osv. Men en rolig upplevelse. 
 
@@ -30,6 +30,6 @@ Försökte göra en frontend som skulle funka i många storlekar och många andr
 ## Vad kan göras bättre?
 Alltså det går ju alltid lägga massa mer tid, hade jag personligen hunnit hade jag jo gjort så att alla mina flikar hade fungerade metoder, men gjort User och att kunna seeda om databasen. Men jag är rätt så nöjd med min och vår insats! 
 
-# Vad blev du mest nöjd med och varför?
+## Vad blev du mest nöjd med och varför?
 Jag är mest nöjd med hur min frontend ser ut på vänster sidan. Drop down menyer som funkar, att joba med paneler och fästa saker på platser känns väldigt najs! 
 Gillar hur den jobba fint med hide och show. Sedan gillar jag att jag hunnit testa en mix av paneler, knappar, textbox, messagebox. 
