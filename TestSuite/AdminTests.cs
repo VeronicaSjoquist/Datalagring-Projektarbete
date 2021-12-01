@@ -26,7 +26,6 @@ namespace TestSuite
                 var foodboxes = ctx.Foodboxes;
 
                 ctx.Database.EnsureDeleted();
-                ctx.SaveChanges();
 
                 Assert.ThrowsAny<Exception>(() => Assert.Empty(customers));
 
@@ -50,7 +49,6 @@ namespace TestSuite
             using (var ctx = new FoodResQCtx())
             {
                 ctx.Database.EnsureDeleted();
-                ctx.SaveChanges();
                 ctx.Database.EnsureCreated();
 
                 var restaurants = admin.ShowAllRestaurants();
@@ -72,7 +70,6 @@ namespace TestSuite
             using (var ctx = new FoodResQCtx())
             {
                 ctx.Database.EnsureDeleted();
-                ctx.SaveChanges();
                 ctx.Database.EnsureCreated();
 
                 var customers = admin.ShowAllCustomers();

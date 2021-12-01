@@ -41,7 +41,6 @@ namespace DataLayer.Backend
                 foodBox.customer = customer;
 
                 ctx.SaveChanges();
-                //ctx.Update(customer);
             }
         }
 

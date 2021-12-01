@@ -77,7 +77,6 @@ namespace DataLayer.Backend
             using (var ctx = new FoodResQCtx())
             {
                 ctx.Database.EnsureDeleted();
-                ctx.SaveChanges();
                 ctx.Database.EnsureCreated();
 
                 var customers = new List<Customer>
