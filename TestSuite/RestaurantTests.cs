@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using DataLayer.Backend;
 using DataLayer.Data;
 using DataLayer.Model;
-using Microsoft.EntityFrameworkCore.Migrations.Operations;
 using Xunit;
 
 namespace TestSuite
@@ -23,7 +20,7 @@ namespace TestSuite
         }
 
         [Fact]
-        void ShowRestaurantSoldBoxesTest()
+        void TestShowRestaurantSoldBoxes()
         {
             adminBackend.CreateAndSeedDb();
             using var context = new FoodResQCtx();
@@ -41,8 +38,9 @@ namespace TestSuite
             Assert.Equal("Meat",result[1].Type);
             Assert.NotNull(result[1].customer);
         }
+
         [Fact]
-        void ShowRestaurantUnsoldBoxesTest()
+        void TestShowRestaurantUnsoldBoxes()
         {
             adminBackend.CreateAndSeedDb();
             using var context = new FoodResQCtx();
@@ -50,7 +48,7 @@ namespace TestSuite
             //Hämta ett befinligt resturang objekt  från databasen
             Restaurant restaurant = context.Restaurants.Find(1);
 
-            //säkerställ att den resturangen finns
+            //Säkerställ att den resturangen finns
             Assert.NotNull(restaurant);
 
             var result = restaurantBackend.ShowUnsoldBoxes(restaurant);
@@ -61,46 +59,40 @@ namespace TestSuite
         }
 
         [Fact]
-        void AddNewFoodBoxTest()
+        void TestAddNewFoodBox()
         {
-            //skerställ att databasen existerar och är seedad.
+            //säkerställ att databasen existerar och är seedad.
 
             adminBackend.CreateAndSeedDb();
-            using (var context = new FoodResQCtx())
-            {
+            using var context = new FoodResQCtx();
 
-                //säkerställ att det inte finns nångon sådan matlåda i databasen
-                var query = context.Foodboxes.Where(f => f.Name == "AddedName" && f.Type == "AddedType");
-                var NotaddedFoodbox = query.FirstOrDefault();
+            //Säkerställ att det inte finns nångon sådan matlåda i databasen
+            var query = context.Foodboxes.Where(f => f.Name == "AddedName" && f.Type == "AddedType");
+            var NotaddedFoodbox = query.FirstOrDefault();
 
-                Assert.Null(NotaddedFoodbox);
+            Assert.Null(NotaddedFoodbox);
 
-                //Hämta ett befinligt resturang objekt  från databasen
-                Restaurant restaurant = context.Restaurants.Find(1);
+            //Hämta ett befinligt resturang objekt från databasen
+            Restaurant restaurant = context.Restaurants.Find(1);
 
-                //säkerställ att den resturangen finns
-                Assert.NotNull(restaurant);
+            //Säkerställ att den resturangen finns
+            Assert.NotNull(restaurant);
 
-                // Använd metoden för att lägga till önskad matlåda i databasen
-                restaurantBackend.AddFoodBox("AddedName", "AddedType", 14, restaurant);
-            }
+            //Använd metoden för att lägga till önskad matlåda i databasen
+            restaurantBackend.AddFoodBox("AddedName", "AddedType", 14, restaurant);
 
-            using (var context = new FoodResQCtx())
-            {
-                // Leta på nytt efter den matlådan
-                var query = context.Foodboxes.Where(f => f.Name == "AddedName" && f.Type == "AddedType");
-                var addedFoodbox = query.FirstOrDefault();
+            //Leta på nytt efter den matlådan
+            query = context.Foodboxes.Where(f => f.Name == "AddedName" && f.Type == "AddedType");
+            var addedFoodbox = query.FirstOrDefault();
 
-                // kolla så att den nu finns
-                Assert.NotNull(addedFoodbox);
-                Assert.Equal("AddedName", addedFoodbox.Name);
-                Assert.Null(addedFoodbox.customer);
-            }
-
+            //Kolla så att den nu finns
+            Assert.NotNull(addedFoodbox);
+            Assert.Equal("AddedName", addedFoodbox.Name);
+            Assert.Null(addedFoodbox.customer);
         }
 
         [Fact]
-        void LoginRestaurantTest()
+        void TestLoginRestaurant()
         {
             adminBackend.CreateAndSeedDb();
             using var context = new FoodResQCtx();

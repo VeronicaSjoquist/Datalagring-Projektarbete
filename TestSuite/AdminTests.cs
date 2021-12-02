@@ -2,7 +2,6 @@ using System;
 using System.Linq;
 using DataLayer.Backend;
 using DataLayer.Data;
-using Microsoft.EntityFrameworkCore;
 using Xunit;
 
 namespace TestSuite
@@ -46,43 +45,23 @@ namespace TestSuite
         [Fact]
         public void TestShowAllRestaurants()
         {
-            using (var ctx = new FoodResQCtx())
-            {
-                ctx.Database.EnsureDeleted();
-                ctx.Database.EnsureCreated();
+            admin.CreateAndSeedDb();
 
-                var restaurants = admin.ShowAllRestaurants();
+            var restaurants = admin.ShowAllRestaurants();
 
-                Assert.Empty(restaurants);
-
-                admin.CreateAndSeedDb();
-
-                restaurants = admin.ShowAllRestaurants();
-
-                Assert.NotEmpty(restaurants);
-                Assert.Equal("Theos Ricehouse", restaurants[0].Name);
-            }
+            Assert.NotEmpty(restaurants);
+            Assert.Equal("Theos Ricehouse", restaurants[0].Name);
         }
 
         [Fact]
         public void TestShowAllCustomers()
         {
-            using (var ctx = new FoodResQCtx())
-            {
-                ctx.Database.EnsureDeleted();
-                ctx.Database.EnsureCreated();
+            admin.CreateAndSeedDb();
 
-                var customers = admin.ShowAllCustomers();
+            var customers = admin.ShowAllCustomers();
 
-                Assert.Empty(customers);
-
-                admin.CreateAndSeedDb();
-
-                customers = admin.ShowAllCustomers();
-
-                Assert.NotEmpty(customers);
-                Assert.Equal("Theo", customers[0].Name);
-            }
+            Assert.NotEmpty(customers);
+            Assert.Equal("Theo", customers[0].Name);
         }
 
         [Fact]
@@ -90,25 +69,21 @@ namespace TestSuite
         {
             admin.CreateAndSeedDb();
 
-            using (var ctx = new FoodResQCtx())
-            {
-                var query = ctx.Restaurants
-                    .Where(e => e.Name == "newRestaurant");
+            using var ctx = new FoodResQCtx();
+            var query = ctx.Restaurants.Where(e => e.Name == "newRestaurant");
 
-                var notAdded = query.FirstOrDefault();
+            var notAdded = query.FirstOrDefault();
 
-                Assert.Null(notAdded);
+            Assert.Null(notAdded);
 
-                admin.AddRestaurant("newRestaurant");
+            admin.AddRestaurant("newRestaurant");
 
-                query = ctx.Restaurants
-                    .Where(e => e.Name == "newRestaurant");
+            query = ctx.Restaurants.Where(e => e.Name == "newRestaurant");
 
-                var addedRestaurant = query.FirstOrDefault();
+            var addedRestaurant = query.FirstOrDefault();
 
-                Assert.NotNull(addedRestaurant);
-                Assert.Equal("newRestaurant", addedRestaurant.Name);
-            }
+            Assert.NotNull(addedRestaurant);
+            Assert.Equal("newRestaurant", addedRestaurant.Name);
         }
     }
 }
