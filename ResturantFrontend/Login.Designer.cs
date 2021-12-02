@@ -41,9 +41,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Perpetua Titling MT", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(224, 40);
+            this.label1.Location = new System.Drawing.Point(196, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(373, 59);
+            this.label1.Size = new System.Drawing.Size(299, 47);
             this.label1.TabIndex = 0;
             this.label1.Text = "Food Rescue";
             // 
@@ -51,9 +51,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Perpetua Titling MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(280, 119);
+            this.label2.Location = new System.Drawing.Point(245, 89);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(259, 28);
+            this.label2.Size = new System.Drawing.Size(203, 22);
             this.label2.TabIndex = 1;
             this.label2.Text = "Restaurant Login";
             // 
@@ -61,9 +61,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(266, 215);
+            this.label3.Location = new System.Drawing.Point(233, 161);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 35);
+            this.label3.Size = new System.Drawing.Size(99, 28);
             this.label3.TabIndex = 2;
             this.label3.Text = "Username";
             // 
@@ -71,19 +71,18 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(266, 280);
+            this.label4.Location = new System.Drawing.Point(233, 210);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 35);
+            this.label4.Size = new System.Drawing.Size(93, 28);
             this.label4.TabIndex = 3;
             this.label4.Text = "Password";
             // 
             // button_Enter
             // 
             this.button_Enter.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_Enter.Location = new System.Drawing.Point(336, 367);
-            this.button_Enter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button_Enter.Location = new System.Drawing.Point(294, 275);
             this.button_Enter.Name = "button_Enter";
-            this.button_Enter.Size = new System.Drawing.Size(112, 53);
+            this.button_Enter.Size = new System.Drawing.Size(98, 40);
             this.button_Enter.TabIndex = 4;
             this.button_Enter.Text = "Enter";
             this.button_Enter.UseVisualStyleBackColor = true;
@@ -91,25 +90,23 @@
             // 
             // textBox_Username
             // 
-            this.textBox_Username.Location = new System.Drawing.Point(386, 221);
-            this.textBox_Username.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox_Username.Location = new System.Drawing.Point(338, 166);
             this.textBox_Username.Name = "textBox_Username";
-            this.textBox_Username.Size = new System.Drawing.Size(153, 27);
+            this.textBox_Username.Size = new System.Drawing.Size(134, 23);
             this.textBox_Username.TabIndex = 5;
             // 
             // textBox_Password
             // 
-            this.textBox_Password.Location = new System.Drawing.Point(386, 287);
-            this.textBox_Password.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox_Password.Location = new System.Drawing.Point(338, 215);
             this.textBox_Password.Name = "textBox_Password";
-            this.textBox_Password.Size = new System.Drawing.Size(153, 27);
+            this.textBox_Password.Size = new System.Drawing.Size(134, 23);
             this.textBox_Password.TabIndex = 6;
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 581);
+            this.ClientSize = new System.Drawing.Size(704, 442);
             this.Controls.Add(this.textBox_Password);
             this.Controls.Add(this.textBox_Username);
             this.Controls.Add(this.button_Enter);
@@ -117,8 +114,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MinimumSize = new System.Drawing.Size(820, 628);
+            this.MinimumSize = new System.Drawing.Size(720, 481);
             this.Name = "Login";
             this.Text = "Form1";
             this.ResumeLayout(false);

@@ -23,8 +23,8 @@ namespace ResturantFrontend
 
         private void Button_AddBox_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AddFoodbox addFoodbox = new AddFoodbox(_restaurant);
+            Hide();
+            AddFoodbox addFoodbox = new AddFoodbox(_restaurant, this);
             addFoodbox.Show();
         }
 
@@ -37,7 +37,7 @@ namespace ResturantFrontend
         private void button_ViewSales_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ViewSales viewSales = new ViewSales(_restaurant);
+            ViewSales viewSales = new ViewSales(_restaurant, this);
             viewSales.Show();
 
         }
