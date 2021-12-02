@@ -1,18 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Diagnostics;
 
 namespace UserFrontend.Buttons
 {
-    public partial class Report : Form
+    public partial class btnGitReport : Form
     {
-        public Report()
+        public btnGitReport()
         {
             InitializeComponent();
         }
@@ -20,6 +12,11 @@ namespace UserFrontend.Buttons
         private void btnReturnFromDescription_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnGitReportWeb_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(new ProcessStartInfo { FileName = "https://github.com/VeronicaSjoquist/Datalagring-Projektarbete/blob/master/Joakim.md", UseShellExecute = true });
         }
     }
 }

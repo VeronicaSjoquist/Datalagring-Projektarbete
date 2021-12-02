@@ -30,6 +30,7 @@
         {
             this.btnReturnFromGit = new System.Windows.Forms.Button();
             this.btnGitWeb = new System.Windows.Forms.Button();
+            this.lableGit = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnReturnFromGit
@@ -46,7 +47,7 @@
             // 
             // btnGitWeb
             // 
-            this.btnGitWeb.Location = new System.Drawing.Point(20, 109);
+            this.btnGitWeb.Location = new System.Drawing.Point(120, 20);
             this.btnGitWeb.Name = "btnGitWeb";
             this.btnGitWeb.Size = new System.Drawing.Size(94, 29);
             this.btnGitWeb.TabIndex = 3;
@@ -54,12 +55,25 @@
             this.btnGitWeb.UseVisualStyleBackColor = true;
             this.btnGitWeb.Click += new System.EventHandler(this.btnGitWeb_Click);
             // 
+            // lableGit
+            // 
+            this.lableGit.AutoSize = true;
+            this.lableGit.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lableGit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lableGit.ForeColor = System.Drawing.SystemColors.Window;
+            this.lableGit.Location = new System.Drawing.Point(20, 52);
+            this.lableGit.Name = "lableGit";
+            this.lableGit.Size = new System.Drawing.Size(350, 30);
+            this.lableGit.TabIndex = 16;
+            this.lableGit.Text = "Press Git go to GitHub and our project";
+            // 
             // Git
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.ClientSize = new System.Drawing.Size(717, 553);
+            this.Controls.Add(this.lableGit);
             this.Controls.Add(this.btnGitWeb);
             this.Controls.Add(this.btnReturnFromGit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -67,6 +81,7 @@
             this.Name = "Git";
             this.Text = "Git";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -74,5 +89,6 @@
 
         private Button btnReturnFromGit;
         private Button btnGitWeb;
+        private Label lableGit;
     }
 }

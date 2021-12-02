@@ -1,6 +1,6 @@
 ﻿namespace UserFrontend.Buttons
 {
-    partial class Report
+    partial class btnGitReport
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.btnReturnFromReport = new System.Windows.Forms.Button();
+            this.btnGitReportWeb = new System.Windows.Forms.Button();
+            this.labelReport = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnReturnFromReport
@@ -43,23 +45,50 @@
             this.btnReturnFromReport.UseVisualStyleBackColor = true;
             this.btnReturnFromReport.Click += new System.EventHandler(this.btnReturnFromDescription_Click);
             // 
-            // Report
+            // btnGitReportWeb
+            // 
+            this.btnGitReportWeb.Location = new System.Drawing.Point(120, 20);
+            this.btnGitReportWeb.Name = "btnGitReportWeb";
+            this.btnGitReportWeb.Size = new System.Drawing.Size(94, 29);
+            this.btnGitReportWeb.TabIndex = 4;
+            this.btnGitReportWeb.Text = "Report";
+            this.btnGitReportWeb.UseVisualStyleBackColor = true;
+            this.btnGitReportWeb.Click += new System.EventHandler(this.btnGitReportWeb_Click);
+            // 
+            // labelReport
+            // 
+            this.labelReport.AutoSize = true;
+            this.labelReport.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelReport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelReport.ForeColor = System.Drawing.SystemColors.Window;
+            this.labelReport.Location = new System.Drawing.Point(20, 52);
+            this.labelReport.Name = "labelReport";
+            this.labelReport.Size = new System.Drawing.Size(335, 30);
+            this.labelReport.TabIndex = 16;
+            this.labelReport.Text = "Press Report to see report on GitHub";
+            // 
+            // btnGitReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.ClientSize = new System.Drawing.Size(717, 553);
+            this.Controls.Add(this.labelReport);
+            this.Controls.Add(this.btnGitReportWeb);
             this.Controls.Add(this.btnReturnFromReport);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(717, 553);
-            this.Name = "Report";
+            this.Name = "btnGitReport";
             this.Text = "Report";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private Button btnReturnFromReport;
+        private Button btnGitReportWeb;
+        private Label labelReport;
     }
 }
