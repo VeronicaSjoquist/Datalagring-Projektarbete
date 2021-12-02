@@ -64,11 +64,9 @@ namespace TestSuite
         void AddNewFoodBoxTest()
         {
             //skerställ att databasen existerar och är seedad.
-
             adminBackend.CreateAndSeedDb();
             using (var context = new FoodResQCtx())
             {
-
                 //säkerställ att det inte finns nångon sådan matlåda i databasen
                 var query = context.Foodboxes.Where(f => f.Name == "AddedName" && f.Type == "AddedType");
                 var NotaddedFoodbox = query.FirstOrDefault();

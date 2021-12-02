@@ -15,19 +15,21 @@ namespace ResturantFrontend
     public partial class AddFoodbox : Form
     {
         private Restaurant _restaurant;
+        private Options _options;
         private RestaurantBackend _restaurantBackend;
-        public AddFoodbox(Restaurant restaurant)
+        public AddFoodbox(Restaurant restaurant, Options options)
         {
             _restaurantBackend = new RestaurantBackend();
+            _options = options;
             _restaurant = restaurant;
             InitializeComponent();
         }
 
         private void button_back_Click(object sender, EventArgs e)
         {
-            Hide();
-            Options options = new Options(_restaurant);
-            options.Show();
+            Close();
+            //Options options = new Options(_restaurant);
+            _options.Show();
         }
 
         private void AddFoodbox_Load(object sender, EventArgs e)

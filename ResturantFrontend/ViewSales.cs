@@ -16,24 +16,25 @@ namespace ResturantFrontend
     {
         private RestaurantBackend _restaurantBackend;
         private Restaurant _restaurant;
-        public ViewSales(Restaurant restaurant)
+        private Options _options;
+        public ViewSales(Restaurant restaurant, Options options)
         {
             InitializeComponent();
             _restaurantBackend = new RestaurantBackend();
             _restaurant = restaurant;
+            _options = options;
         }
 
         private void ViewSales_Load(object sender, EventArgs e)
         {
             textBox_PrintRestauratName.Text = $"{_restaurant.Name}";
-
         }
 
         private void button_back_Click(object sender, EventArgs e)
         {
             Hide();
-            Options options = new Options(_restaurant);
-            options.Show();
+            //Options options = new Options(_restaurant);
+            _options.Show();
         }
 
         private void button_SoldBoxses_Click(object sender, EventArgs e)
@@ -43,7 +44,7 @@ namespace ResturantFrontend
             listView1.Items.Clear();
             foreach (var foodbox in soldFoodboxes)
             {
-                var row = new string[] { foodbox.Name, foodbox.Price.ToString(), foodbox.Type };
+                var row = new[] { foodbox.Name, foodbox.Price.ToString(), foodbox.Type };
                 var listViewItem = new ListViewItem(row);
                 listViewItem.Tag = foodbox;
 
@@ -58,7 +59,7 @@ namespace ResturantFrontend
             listView1.Items.Clear();
             foreach (var foodbox in UnsoldFoodboxes)
             {
-                var row = new string[] { foodbox.Name, foodbox.Price.ToString(), foodbox.Type };
+                var row = new[] { foodbox.Name, foodbox.Price.ToString(), foodbox.Type };
                 var listViewItem = new ListViewItem(row);
                 listViewItem.Tag = foodbox;
 
