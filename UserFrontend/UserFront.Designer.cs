@@ -42,6 +42,7 @@
             this.btnShowSoldBoxes = new System.Windows.Forms.Button();
             this.btnRestaurant = new System.Windows.Forms.Button();
             this.panelCustom = new System.Windows.Forms.Panel();
+            this.btwCustomerHistory = new System.Windows.Forms.Button();
             this.btnBuyFoodBox = new System.Windows.Forms.Button();
             this.btnUnsoldFoodBoxes = new System.Windows.Forms.Button();
             this.btnCustomer = new System.Windows.Forms.Button();
@@ -54,7 +55,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelWorkSpace = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btwCustomerHistory = new System.Windows.Forms.Button();
             this.panelSideMenu.SuspendLayout();
             this.panelAdmin.SuspendLayout();
             this.paneRestaurant.SuspendLayout();
@@ -291,6 +291,25 @@
             this.panelCustom.Size = new System.Drawing.Size(244, 154);
             this.panelCustom.TabIndex = 4;
             // 
+            // btwCustomerHistory
+            // 
+            this.btwCustomerHistory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btwCustomerHistory.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btwCustomerHistory.FlatAppearance.BorderSize = 0;
+            this.btwCustomerHistory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
+            this.btwCustomerHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btwCustomerHistory.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btwCustomerHistory.ForeColor = System.Drawing.SystemColors.Window;
+            this.btwCustomerHistory.Location = new System.Drawing.Point(0, 100);
+            this.btwCustomerHistory.Name = "btwCustomerHistory";
+            this.btwCustomerHistory.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btwCustomerHistory.Size = new System.Drawing.Size(244, 50);
+            this.btwCustomerHistory.TabIndex = 2;
+            this.btwCustomerHistory.Text = "CustomerHistory";
+            this.btwCustomerHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btwCustomerHistory.UseVisualStyleBackColor = false;
+            this.btwCustomerHistory.Click += new System.EventHandler(this.btwCustomerHistory_Click);
+            // 
             // btnBuyFoodBox
             // 
             this.btnBuyFoodBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -478,25 +497,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // btwCustomerHistory
-            // 
-            this.btwCustomerHistory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btwCustomerHistory.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btwCustomerHistory.FlatAppearance.BorderSize = 0;
-            this.btwCustomerHistory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
-            this.btwCustomerHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btwCustomerHistory.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btwCustomerHistory.ForeColor = System.Drawing.SystemColors.Window;
-            this.btwCustomerHistory.Location = new System.Drawing.Point(0, 100);
-            this.btwCustomerHistory.Name = "btwCustomerHistory";
-            this.btwCustomerHistory.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btwCustomerHistory.Size = new System.Drawing.Size(244, 50);
-            this.btwCustomerHistory.TabIndex = 2;
-            this.btwCustomerHistory.Text = "CustomerHistory";
-            this.btwCustomerHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btwCustomerHistory.UseVisualStyleBackColor = false;
-            this.btwCustomerHistory.Click += new System.EventHandler(this.btwCustomerHistory_Click);
             // 
             // UserFront
             // 

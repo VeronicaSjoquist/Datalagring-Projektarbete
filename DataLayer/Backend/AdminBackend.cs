@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DataLayer.Data;
 using DataLayer.Model;
 
@@ -18,28 +15,6 @@ namespace DataLayer.Backend
                 var query = ctx.Customers;
 
                 return query.ToList();
-            }
-        }
-
-        //En metod för att kunna ta bort en användare utifrån användarnamn
-        public void RemoveCustomer(string username)
-        {
-            using (var ctx = new FoodResQCtx())
-            {
-                var query = ctx.Customers
-                    .Where(e => e.Username == username);
-                var customer = query.FirstOrDefault();
-
-                if (customer == null)
-                {
-                    return;
-                }
-
-                customer.Name = null;
-                customer.Username = null;
-                customer.Password = null;
-
-                ctx.SaveChanges();
             }
         }
 
@@ -72,12 +47,11 @@ namespace DataLayer.Backend
         }
 
         //En metod för att skapa om och seeda databasen
-        public void CreateAndSeedDb() //Jag ändrade denna till static för att kunna använda den i testerna. - Joakim
+        public void CreateAndSeedDb()
         {
             using (var ctx = new FoodResQCtx())
             {
                 ctx.Database.EnsureDeleted();
-                ctx.SaveChanges();
                 ctx.Database.EnsureCreated();
 
                 var customers = new List<Customer>

@@ -28,7 +28,7 @@ namespace UserFrontend.Buttons.Customer
         protected void btnUnsoldFoodBoxes_Click(object sender, EventArgs e)
         {
             UserBackend userBackend = new UserBackend();
-            var soldFoodboxes = userBackend.UnsoldFoodBoxes("Fish"); ;
+            var soldFoodboxes = userBackend.ListUnsoldFoodBoxesOnType("Fish"); ;
             listUnsoldBoxes.Items.Clear();
 
             foreach (var foodbox in soldFoodboxes)
@@ -44,7 +44,7 @@ namespace UserFrontend.Buttons.Customer
         private void btnUnsoldFoodMeatBoxes_Click(object sender, EventArgs e)
         {
             UserBackend userBackend = new UserBackend();
-            var soldFoodboxes = userBackend.UnsoldFoodBoxes("Meat"); ;
+            var soldFoodboxes = userBackend.ListUnsoldFoodBoxesOnType("Meat"); ;
             listUnsoldBoxes.Items.Clear();
             foreach (var foodbox in soldFoodboxes)
             {
@@ -59,7 +59,7 @@ namespace UserFrontend.Buttons.Customer
         private void btnUnsoldFoodVeganBoxes_Click(object sender, EventArgs e)
         {
             UserBackend userBackend = new UserBackend();
-            var soldFoodboxes = userBackend.UnsoldFoodBoxes("Vegan"); ;
+            var soldFoodboxes = userBackend.ListUnsoldFoodBoxesOnType("Vegan"); ;
             listUnsoldBoxes.Items.Clear();
             foreach (var foodbox in soldFoodboxes)
             {
