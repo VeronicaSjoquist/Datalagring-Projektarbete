@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Diagnostics;
+
 
 namespace UserFrontend.Buttons
 {
@@ -20,7 +12,7 @@ namespace UserFrontend.Buttons
 
         private void btnGitWeb_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(new ProcessStartInfo{FileName = "https://github.com/VeronicaSjoquist/Datalagring-Projektarbete",UseShellExecute = true});//Behöver länka webläsare ev.
+            System.Diagnostics.Process.Start(new ProcessStartInfo{FileName = "https://github.com/VeronicaSjoquist/Datalagring-Projektarbete",UseShellExecute = true});
         }
 
         private void btnReturnFromDescription_Click(object sender, EventArgs e)

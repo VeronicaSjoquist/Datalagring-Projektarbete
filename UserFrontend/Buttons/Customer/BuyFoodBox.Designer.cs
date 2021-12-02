@@ -63,7 +63,6 @@
             // 
             // btnVeronicasKöttfärssås
             // 
-            this.btnVeronicasKöttfärssås.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnVeronicasKöttfärssås.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
             this.btnVeronicasKöttfärssås.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnVeronicasKöttfärssås.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -77,7 +76,6 @@
             // 
             // btnKanelbulleKim
             // 
-            this.btnKanelbulleKim.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnKanelbulleKim.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
             this.btnKanelbulleKim.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnKanelbulleKim.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -91,7 +89,6 @@
             // 
             // listUnsold
             // 
-            this.listUnsold.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.listUnsold.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ID,
             this.Food,
@@ -126,7 +123,6 @@
             // 
             // btnTheosRiceHouse
             // 
-            this.btnTheosRiceHouse.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnTheosRiceHouse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
             this.btnTheosRiceHouse.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnTheosRiceHouse.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -140,7 +136,6 @@
             // 
             // listCustomers
             // 
-            this.listCustomers.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.listCustomers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.cID,
             this.Customer});
@@ -163,7 +158,6 @@
             // 
             // btnCustomers
             // 
-            this.btnCustomers.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCustomers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
             this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnCustomers.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -216,7 +210,6 @@
             // 
             // textBoxCustomer
             // 
-            this.textBoxCustomer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxCustomer.Location = new System.Drawing.Point(191, 390);
             this.textBoxCustomer.Name = "textBoxCustomer";
             this.textBoxCustomer.Size = new System.Drawing.Size(55, 27);
@@ -224,7 +217,6 @@
             // 
             // textBoxBox
             // 
-            this.textBoxBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxBox.Location = new System.Drawing.Point(191, 423);
             this.textBoxBox.Name = "textBoxBox";
             this.textBoxBox.Size = new System.Drawing.Size(55, 27);
@@ -232,7 +224,6 @@
             // 
             // btnBuy
             // 
-            this.btnBuy.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnBuy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
             this.btnBuy.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnBuy.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
