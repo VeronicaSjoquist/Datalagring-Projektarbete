@@ -28,7 +28,6 @@ namespace ResturantFrontend
         private void button_back_Click(object sender, EventArgs e)
         {
             Close();
-            //Options options = new Options(_restaurant);
             _options.Show();
         }
 

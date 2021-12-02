@@ -25,16 +25,14 @@ namespace ResturantFrontend
             _options = options;
         }
 
+        private void button_back_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            _options.Show();
+        }
         private void ViewSales_Load(object sender, EventArgs e)
         {
             textBox_PrintRestauratName.Text = $"{_restaurant.Name}";
-        }
-
-        private void button_back_Click(object sender, EventArgs e)
-        {
-            Hide();
-            //Options options = new Options(_restaurant);
-            _options.Show();
         }
 
         private void button_SoldBoxses_Click(object sender, EventArgs e)

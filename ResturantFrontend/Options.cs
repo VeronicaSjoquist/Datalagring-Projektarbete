@@ -27,6 +27,7 @@ namespace ResturantFrontend
             AddFoodbox addFoodbox = new AddFoodbox(_restaurant, this);
             addFoodbox.Show();
         }
+    
 
         private void Options_Load(object sender, EventArgs e)
         {
