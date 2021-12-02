@@ -1,13 +1,4 @@
 ﻿using DataLayer.Backend;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace UserFrontend.Buttons.Customer
 {
@@ -27,7 +18,7 @@ namespace UserFrontend.Buttons.Customer
         {
             UserBackend userBackend = new UserBackend();
 
-            var soldFoodboxes = userBackend.listofCustomerBuys(1); ;
+            var soldFoodboxes = userBackend.ListOfCustomerHistory(1); ;
             listHistorySold.Items.Clear();
 
             foreach (var foodbox in soldFoodboxes)
@@ -49,7 +40,7 @@ namespace UserFrontend.Buttons.Customer
         {
             UserBackend userBackend = new UserBackend();
 
-            var soldFoodboxes = userBackend.listofCustomerBuys(2); ;
+            var soldFoodboxes = userBackend.ListOfCustomerHistory(2); ;
             listHistorySold.Items.Clear();
 
             foreach (var foodbox in soldFoodboxes)
@@ -70,7 +61,7 @@ namespace UserFrontend.Buttons.Customer
         {
             UserBackend userBackend = new UserBackend();
 
-            var soldFoodboxes = userBackend.listofCustomerBuys(3); ;
+            var soldFoodboxes = userBackend.ListOfCustomerHistory(3); ;
             listHistorySold.Items.Clear();
 
             foreach (var foodbox in soldFoodboxes)

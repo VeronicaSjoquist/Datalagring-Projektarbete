@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using DataLayer.Data;
 using DataLayer.Model;
@@ -9,21 +8,6 @@ namespace DataLayer.Backend
 {
     public class UserBackend
     {
-        //En metod för att få ut en lista på alla oköpta matlådor i alla restauranger, sorterade på pris lägst först. Parameter: typ av matlåda (kött/fisk/vego)
-        public List<FoodBox> UnsoldFoodBoxes(string type)
-        {
-            using (var ctx = new FoodResQCtx())
-            {
-                var query = ctx.Foodboxes
-                    .Include(e => e.restaurant)
-                    .Include(e => e.customer)
-                    .Where(e => e.customer == null && e.Type == type)
-                    .OrderBy(e => e.Price);
-
-                return query.ToList();
-            }
-        }
-
         //En metod för att köpa ett givet lunchlåde objekt
         public void BuyFoodBox(int foodboxId, int customerId)
         {
@@ -44,33 +28,38 @@ namespace DataLayer.Backend
             }
         }
 
-        //Joakims extra metod för att lista efter Restaurang
-
-        public List<FoodBox> listUnsoldonRestaurant(string nameof)
+        //En metod för att få ut en lista på alla oköpta matlådor i alla restauranger av en viss typ (kött/fisk/vegan), sorterade på pris lägst först.
+        public List<FoodBox> ListUnsoldFoodBoxesOnType(string type)
         {
             using (var ctx = new FoodResQCtx())
             {
                 var query = ctx.Foodboxes
                     .Include(e => e.restaurant)
                     .Include(e => e.customer)
-                    .Where(e => e.customer == null && e.restaurant.Name == nameof)
+                    .Where(e => e.customer == null && e.Type == type)
                     .OrderBy(e => e.Price);
 
                 return query.ToList();
             }
         }
 
-        public List<Customer> userList()
+        //En metod för att lista oköpta boxar av alla typer i en viss restaurang, sorterade på pris lägst först.
+        public List<FoodBox> ListUnsoldFoodBoxesOnRestaurant(string restaurantName)
         {
             using (var ctx = new FoodResQCtx())
             {
-                var query = ctx.Customers;
+                var query = ctx.Foodboxes
+                    .Include(e => e.restaurant)
+                    .Include(e => e.customer)
+                    .Where(e => e.customer == null && e.restaurant.Name == restaurantName)
+                    .OrderBy(e => e.Price);
 
                 return query.ToList();
             }
         }
 
-        public List<FoodBox> listofCustomerBuys(int customerId)
+        //En metod för att lista köphistoriken hos en kund.
+        public List<FoodBox> ListOfCustomerHistory(int customerId)
         {
             using (var ctx = new FoodResQCtx())
             {

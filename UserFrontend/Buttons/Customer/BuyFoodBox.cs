@@ -26,11 +26,11 @@ namespace UserFrontend.Buttons.Customer
         private void btnUnsoldFoodFishBoxes_Click(object sender, EventArgs e)
         {
             UserBackend userBackend = new UserBackend();
-            var soldFoodboxes = userBackend.listUnsoldonRestaurant("Theos Ricehouse"); 
+            var soldFoodboxes = userBackend.ListUnsoldFoodBoxesOnRestaurant("Theos Ricehouse"); 
             listUnsold.Items.Clear();
             foreach (var foodbox in soldFoodboxes)
             {
-                var row = new string[] { foodbox.ID.ToString(), foodbox.Name, foodbox.restaurant.Name, foodbox.Price.ToString() };
+                var row = new string[] { foodbox.ID.ToString(), foodbox.Name, foodbox.restaurant.Name, foodbox.Price.ToString() + ":-" };
                 var listviewItem = new ListViewItem(row);
                 listviewItem.Tag = foodbox;
 
@@ -41,7 +41,7 @@ namespace UserFrontend.Buttons.Customer
         private void btnKanelbulleKim_Click(object sender, EventArgs e)
         {
             UserBackend userBackend = new UserBackend();
-            var soldFoodboxes = userBackend.listUnsoldonRestaurant("Kanelbulle Kim"); 
+            var soldFoodboxes = userBackend.ListUnsoldFoodBoxesOnRestaurant("Kanelbulle Kim"); 
             listUnsold.Items.Clear();
             foreach (var foodbox in soldFoodboxes)
             {
@@ -56,7 +56,7 @@ namespace UserFrontend.Buttons.Customer
         private void btnVeronicasKöttfärssås_Click(object sender, EventArgs e)
         {
             UserBackend userBackend = new UserBackend();
-            var soldFoodboxes = userBackend.listUnsoldonRestaurant("Veronicas Köttfärssås"); 
+            var soldFoodboxes = userBackend.ListUnsoldFoodBoxesOnRestaurant("Veronicas Köttfärssås"); 
             listUnsold.Items.Clear();
             foreach (var foodbox in soldFoodboxes)
             {
@@ -70,8 +70,8 @@ namespace UserFrontend.Buttons.Customer
 
         private void btnCustomers_Click(object sender, EventArgs e)
         {
-            UserBackend userBackend = new UserBackend();
-            var UserList = userBackend.userList(); 
+            AdminBackend adminBackend = new AdminBackend();
+            var UserList = adminBackend.ShowAllCustomers(); 
             listCustomers.Items.Clear();
             foreach (var customer in UserList)
             {
